@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>サンプル</title>
+	<link rel="stylesheet" type="text/css" href="calc.css">
+	<script src="calc.js"></script>
+</head>
+<body>
+	<form name="scCalc">
+		<select name="unit" onChange="selectUnit();">
+			<option>---ユニットを選択---</option>
+			<option value="uni001">カイル</option>
+			<option value="uni002">レイ</option>
+			<option value="uni003">少女ティリア</option>
+			<option value="uni004">ゼクス</option>
+			<option value="uni005">リルベット</option>
+			<option value="uni006">施術士リーナ</option>
+			<option value="uni007">ゴロス</option>
+			<option value="uni008">ブラッド・ローズ</option>
+			<option value="uni009">ゴルム</option>
+			<option value="uni010">ダイン</option>
+			<option value="uni011">盗賊ロビン</option>
+			<option value="uni012">シン</option>
+			<option value="uni013">グラバイン</option>
+			<option value="uni014">ドーラ</option>
+			<option value="uni015">氷セヴィア</option>
+			<option value="uni016">光リラ</option>
+			<option value="uni017">白メルザ</option>
+			<option value="uni028">ルキエル</option>
+			<option value="uni029">ロメル</option>
+			<option value="uni030">黒メルザ</option>
+			<option value="uni031">ルーガー</option>
+			<option value="uni032">ランスヴェル</option>
+			<option value="uni033">エリザ</option>
+			<option value="uni034">マディン</option>
+			<option value="uni035">怪盗ロビン</option>
+			<option value="uni036">水着リラ</option>
+			<option value="uni037">ファル</option>
+			<option value="uni038">ランディ</option>
+			<option value="uni039">ヴァン</option>
+			<option value="uni040">プリム</option>
+			<option value="uni041">ポポイ</option>
+			<option value="uni042">ダヴァン</option>
+			<option value="uni043">召喚師リーナ</option>
+			<option value="uni044">セイリオス</option>
+			<option value="uni045">サンタティリア</option>
+			<option value="uni046">ゾグラス</option>
+			<option value="uni047">雷セヴィア</option>
+			<option value="uni048">リリー</option>
+			<option value="uni049">ティンキリ</option>
+			<option value="uni050">ザイクス</option>
+			<option value="uni018">ガウル</option>
+			<option value="uni019">ゴブル</option>
+			<option value="uni020">ホブゴブル</option>
+			<option value="uni021">ポックル</option>
+			<option value="uni022">スケルトン</option>
+			<option value="uni023">ファントム</option>
+			<option value="uni024">ダボーン</option>
+			<option value="uni025">サハギン</option>
+			<option value="uni026">ヴァザード</option>
+			<option value="uni027">DXR-MK02</option>
+		</select>
+
+		<h2>HP回復魔法</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk001">ヒール</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk001" value="sk001" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のHPを小回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk021">ゴッドヒール</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk021" value="sk021" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のHPを大回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk007">ヒールウィンド</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk007" value="sk007" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のHPを回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk010">スターヒール</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk010" value="sk010" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のHPを回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk017">スターダストヒール</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk017" value="sk017" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のHPを中回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk004">リジェネ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk004" value="sk004" onClick="calc()"></td></tr><tr><td colspan="2">味方単体にHPが小回復する効果を付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk014">ハイリジェネ</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk014" value="sk014" onClick="calc()"></td></tr><tr><td colspan="2">味方単体に徐々にHPが回復する効果を付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk019">グランドリジェネ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk019" value="sk019" onClick="calc()"></td></tr><tr><td colspan="2">味方全体に徐々にHPが中回復する効果を付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk078">バイタリティ</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk078" value="sk078" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のHP上限を1000増やすと同時に回復</td></tr>
+			</tbody>
+		</table>
+
+		<h2>状態異常回復魔法</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk002">キュアポイズン</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk002" value="sk002" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の毒を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk011">マキュアポイズン</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk011" value="sk011" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の毒を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk003">キュアダーク</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk003" value="sk003" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の暗闇を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk012">マキュアダーク</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk012" value="sk012" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の暗闇を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk005">キュアサイレンス</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk005" value="sk005" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の沈黙を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk015">マキュアサイレンス</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk015" value="sk015" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の沈黙を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk006">キュアカーズ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk006" value="sk006" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の呪いを回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk016">マキュアカーズ</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk016" value="sk016" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の呪いを回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk008">キュアウィルス</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk008" value="sk008" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の病気を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk020">マキュアウィルス</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk020" value="sk020" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の病気を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk009">キュアパラライズ</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk009" value="sk009" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の麻痺を回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk018">キュアオール</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk018" value="sk018" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の毒・暗闇・沈黙・呪い・病気・麻痺を回復</td></tr>
+			</tbody>
+		</table>
+
+		<h2>戦闘不能回復魔法</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk013">リザレクション</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk013" value="sk013" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の戦闘不能を回復</td></tr>
+			</tbody>
+		</table>
+
+		<h2>攻撃魔法</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk022">バーンストライク</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk022" value="sk022" onClick="calc()"></td></tr><tr><td colspan="2">小範囲の敵に炎属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk029">メテオレイン</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk029" value="sk029" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に炎属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk036">クリムゾンフレア</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk036" value="sk036" onClick="calc()"></td></tr><tr><td colspan="2">広範囲の敵に炎属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk023">アイスジャベリン</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk023" value="sk023" onClick="calc()"></td></tr><tr><td colspan="2">小範囲の敵に氷属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk030">ブリザード</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk030" value="sk030" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に氷属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk037">ダイヤモンドダスト</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk037" value="sk037" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に氷属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk024">ロックディザスター</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk024" value="sk024" onClick="calc()"></td></tr><tr><td colspan="2">小範囲の敵に樹属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk031">トルネードストーム</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk031" value="sk031" onClick="calc()"></td></tr><tr><td colspan="2">中範囲の敵に樹属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk038">グランドクロス</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk038" value="sk038" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に樹属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk025">サンダーボルト</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk025" value="sk025" onClick="calc()"></td></tr><tr><td colspan="2">小範囲の敵に雷属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk032">ライザーゲージ</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk032" value="sk032" onClick="calc()"></td></tr><tr><td colspan="2">中範囲の敵に雷属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk039">ヴァルザライザー</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk039" value="sk039" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に雷属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk026">アストラルレイ</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk026" value="sk026" onClick="calc()"></td></tr><tr><td colspan="2">小範囲の敵に光属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk033">ギャラクシー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk033" value="sk033" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に光属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk040">シャイニングゾーク</td><td>SC:10</td><td rowspan="2"><input type="checkbox" name="sk040" value="sk040" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に光属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk081">ソウルスパーク</td><td>SC:10</td><td rowspan="2"><input type="checkbox" name="sk081" value="sk081" onClick="calc()"></td></tr><tr><td colspan="2">自分を犠牲にし敵全体に光属性の強力な攻撃(使用後戦闘不能)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk027">シャドウグラビティ</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk027" value="sk027" onClick="calc()"></td></tr><tr><td colspan="2">小範囲の敵に闇属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk034">ダークマター</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk034" value="sk034" onClick="calc()"></td></tr><tr><td colspan="2">中範囲の敵に闇属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk041">アビスゲート</td><td>SC:10</td><td rowspan="2"><input type="checkbox" name="sk041" value="sk041" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に闇属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk028">ポイズンクラウド</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk028" value="sk028" onClick="calc()"></td></tr><tr><td colspan="2">中範囲の敵に闇属性の攻撃(低確率で毒を付与)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk035">ベノムレインフォール</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk035" value="sk035" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に闇属性のダメージ(確率で毒を付与)</td></tr>
+			</tbody>
+		</table>
+
+		<h2>状態異常魔法</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk044">ダークネス</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk044" value="sk044" onClick="calc()"></td></tr><tr><td colspan="2">敵単体に確率で暗闇を付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk054">サイレンス</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk054" value="sk054" onClick="calc()"></td></tr><tr><td colspan="2">敵単体に確率で沈黙を付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk055">カーズ</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk055" value="sk055" onClick="calc()"></td></tr><tr><td colspan="2">敵単体に確率で呪いを付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk329">ギガカーズ</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk329" value="sk329" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に確率で呪いを付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk056">ウィーク</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk056" value="sk056" onClick="calc()"></td></tr><tr><td colspan="2">敵単体の全属性耐性をダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk074">アヌラメルス</td><td>SC:10</td><td rowspan="2"><input type="checkbox" name="sk074" value="sk074" onClick="calc()"></td></tr><tr><td colspan="2">敵全体の状態異常耐性をダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk077">ギガダークネス</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk077" value="sk077" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に確率で暗闇を付与</td></tr>
+			</tbody>
+		</table>
+
+		<h2>バフ魔法</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk042">プロテクション</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk042" value="sk042" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の受ける物理ダメージを15%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk090">ハイプロテクション</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk090" value="sk090" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の受ける物理ダメージを35%カットするバフを付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk068">グランドプロテクション</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk068" value="sk068" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の受ける物理ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk043">マジックバリア</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk043" value="sk043" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の受ける魔法ダメージを15%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk094">ハイマジックバリア</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk094" value="sk094" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の受ける魔法ダメージを35%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk069">マジックキャッスル</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk069" value="sk069" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の受ける魔法ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk045">スピード</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk045" value="sk045" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の移動速度をアップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk070">スピードフェザー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk070" value="sk070" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の移動速度をアップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk046">ブレイブ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk046" value="sk046" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のSTRを20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk080">グランブレイブ</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk080" value="sk080" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のSTRを35%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk071">ブレイブフェザー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk071" value="sk071" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のSTRを20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk047">オーラ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk047" value="sk047" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のINTを20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk072">オーラフェザー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk072" value="sk072" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のINTを20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk093">フォートフェザー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk093" value="sk093" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のDEFを20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk075">メティス</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk075" value="sk075" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のMNDを20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk092">メティスフェザー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk092" value="sk092" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のMNDを20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk049">クリティカル</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk049" value="sk049" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のクリティカル発生率を15%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk073">クリティカルフェザー</td><td>SC:10</td><td rowspan="2"><input type="checkbox" name="sk073" value="sk073" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のクリティカル発生率を15%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk063">ヘイスト</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk063" value="sk063" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のスキル回復速度を25%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk095">ヒートライブ</td><td>SC:15</td><td rowspan="2"><input type="checkbox" name="sk095" value="sk095" onClick="calc()"></td></tr><tr><td colspan="2">味方全体のスキル回復速度を25%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk048">リキャスト</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk048" value="sk048" onClick="calc()"></td></tr><tr><td colspan="2">味方単体の詠唱速度を30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk057">ファイアウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk057" value="sk057" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の樹属性ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk058">アイスウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk058" value="sk058" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の炎属性ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk059">ストーンウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk059" value="sk059" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の雷属性ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk060">サンダーウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk060" value="sk060" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の氷属性ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk061">ホーリーウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk061" value="sk061" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の闇属性ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk062">シャドウウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk062" value="sk062" onClick="calc()"></td></tr><tr><td colspan="2">味方全体の光属性ダメージを20%カット</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk076">ハイドロシェル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk076" value="sk076" onClick="calc()"></td></tr><tr><td colspan="2">雷属性を除いた魔法ダメージを一定量半減するバリアを付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk317">イルミネーション</td><td>SC:0</td><td rowspan="2"><input type="checkbox" name="sk317" value="sk317" onClick="calc()"></td></tr><tr><td colspan="2">六属性のウォール系魔法が自分に10秒ごと3回掛かる</td></tr>
+			</tbody>
+		</table>
+
+		<h2>デバフ魔法</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk050">ブレイサー</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk050" value="sk050" onClick="calc()"></td></tr><tr><td colspan="2">敵単体のSTRを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk064">ギガブレイサー</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk064" value="sk064" onClick="calc()"></td></tr><tr><td colspan="2">敵全体のSTRを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk051">スイン</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk051" value="sk051" onClick="calc()"></td></tr><tr><td colspan="2">敵単体のDEFを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk065">ギガスイン</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk065" value="sk065" onClick="calc()"></td></tr><tr><td colspan="2">敵全体のDEFを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk052">ロストマ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk052" value="sk052" onClick="calc()"></td></tr><tr><td colspan="2">敵単体のINTを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk066">ギガロストマ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk066" value="sk066" onClick="calc()"></td></tr><tr><td colspan="2">敵全体のINTを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk053">ネメシス</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk053" value="sk053" onClick="calc()"></td></tr><tr><td colspan="2">敵単体のMNDを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk330">ハイネメシス</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk330" value="sk330" onClick="calc()"></td></tr><tr><td colspan="2">敵単体のMNDが35%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk067">ギガネメシス</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk067" value="sk067" onClick="calc()"></td></tr><tr><td colspan="2">敵全体のMNDを20%ダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk079">アイスサークル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk079" value="sk079" onClick="calc()"></td></tr><tr><td colspan="2">敵単体に氷属性のダメージを定期的に与え、雷属性の耐性を下げる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk089">シャドウサークル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk089" value="sk089" onClick="calc()"></td></tr><tr><td colspan="2">敵単体に闇属性のダメージを定期的に与え、光属性耐性をダウン</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk091">ホーリーサークル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk091" value="sk091" onClick="calc()"></td></tr><tr><td colspan="2">敵単体に光属性ダメージを定期的に与え、闇属性耐性をダウン</td></tr>
+			</tbody>
+		</table>
+
+		<h2>ステータスアップ</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk096">HPアップ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk096" value="sk096" onClick="calc()"></td></tr><tr><td colspan="2">HPを5%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk097">HPアップ2</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk097" value="sk097" onClick="calc()"></td></tr><tr><td colspan="2">HPを8%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk098">HPアップ3</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk098" value="sk098" onClick="calc()"></td></tr><tr><td colspan="2">HPを12%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk099">HPアップ極</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk099" value="sk099" onClick="calc()"></td></tr><tr><td colspan="2">HPを20%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk100">MPアップ</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk100" value="sk100" onClick="calc()"></td></tr><tr><td colspan="2">MPを5%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk101">MPアップ2</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk101" value="sk101" onClick="calc()"></td></tr><tr><td colspan="2">MPを8%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk102">MPアップ3</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk102" value="sk102" onClick="calc()"></td></tr><tr><td colspan="2">MPを12%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk103">MPアップ極</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk103" value="sk103" onClick="calc()"></td></tr><tr><td colspan="2">MPを20%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk104">攻撃アップ</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk104" value="sk104" onClick="calc()"></td></tr><tr><td colspan="2">STRを2%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk105">攻撃アップ2</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk105" value="sk105" onClick="calc()"></td></tr><tr><td colspan="2">STRを5%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk106">攻撃アップ3</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk106" value="sk106" onClick="calc()"></td></tr><tr><td colspan="2">STRを8%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk107">攻撃アップ極</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk107" value="sk107" onClick="calc()"></td></tr><tr><td colspan="2">STRを15%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk108">防御アップ</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk108" value="sk108" onClick="calc()"></td></tr><tr><td colspan="2">DEFを2%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk109">防御アップ2</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk109" value="sk109" onClick="calc()"></td></tr><tr><td colspan="2">DEFを5%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk110">防御アップ3</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk110" value="sk110" onClick="calc()"></td></tr><tr><td colspan="2">DEFを8%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk320">防御アップ4</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk320" value="sk320" onClick="calc()"></td></tr><tr><td colspan="2">DEFを12%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk111">防御アップ極</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk111" value="sk111" onClick="calc()"></td></tr><tr><td colspan="2">DEFを15%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk112">魔力アップ</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk112" value="sk112" onClick="calc()"></td></tr><tr><td colspan="2">INTを2%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk113">魔力アップ2</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk113" value="sk113" onClick="calc()"></td></tr><tr><td colspan="2">INTを5%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk114">魔力アップ3</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk114" value="sk114" onClick="calc()"></td></tr><tr><td colspan="2">INTを8%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk115">魔力アップ極</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk115" value="sk115" onClick="calc()"></td></tr><tr><td colspan="2">INTを15%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk116">精神アップ</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk116" value="sk116" onClick="calc()"></td></tr><tr><td colspan="2">MNDを2%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk117">精神アップ2</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk117" value="sk117" onClick="calc()"></td></tr><tr><td colspan="2">MNDを5%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk118">精神アップ3</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk118" value="sk118" onClick="calc()"></td></tr><tr><td colspan="2">MNDを8%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk119">精神アップ極</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk119" value="sk119" onClick="calc()"></td></tr><tr><td colspan="2">MNDを15%アップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk276">リベンジブレイブ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk276" value="sk276" onClick="calc()"></td></tr><tr><td colspan="2">ダメージを受けたとき、確率でSTRが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk277">リベンジオーラ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk277" value="sk277" onClick="calc()"></td></tr><tr><td colspan="2">ダメージを受けたとき、確率でINTが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk319">リーンフォース</td><td>SC:-</td><td rowspan="2"><input type="checkbox" name="sk319" value="sk319" onClick="calc()"></td></tr><tr><td colspan="2">超必殺ゲージが最大まで溜まった状態でINTが30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk203">激高</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk203" value="sk203" onClick="calc()"></td></tr><tr><td colspan="2">瀕死時にSTRが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk204">忍耐</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk204" value="sk204" onClick="calc()"></td></tr><tr><td colspan="2">瀕死時にDEFが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk205">感応</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk205" value="sk205" onClick="calc()"></td></tr><tr><td colspan="2">瀕死時にINTが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk206">静暖</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk206" value="sk206" onClick="calc()"></td></tr><tr><td colspan="2">瀕死時にMNDが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk207">加速</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk207" value="sk207" onClick="calc()"></td></tr><tr><td colspan="2">瀕死時に移動速度が上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk208">堂々</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk208" value="sk208" onClick="calc()"></td></tr><tr><td colspan="2">HPが最大のときにSTRが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk209">月光</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk209" value="sk209" onClick="calc()"></td></tr><tr><td colspan="2">HPが最大のときにINTが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk210">飛影</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk210" value="sk210" onClick="calc()"></td></tr><tr><td colspan="2">HPが最大のときに移動速度が上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk289">黄昏</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk289" value="sk289" onClick="calc()"></td></tr><tr><td colspan="2">MPが最大の時にDEFとMNDが20%上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk327">覚醒</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk327" value="sk327" onClick="calc()"></td></tr><tr><td colspan="2">瀕死時にHPが回復してSTR・DEF・MND・移動速度が上がる（一回限定）</td></tr>
+			</tbody>
+		</table>
+
+		<h2>クリティカル</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk120">クリティカルアップ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk120" value="sk120" onClick="calc()"></td></tr><tr><td colspan="2">クリティカル発生率2%上昇</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk121">クリティカルアップ2</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk121" value="sk121" onClick="calc()"></td></tr><tr><td colspan="2">クリティカル発生率5%上昇</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk122">クリティカルアップ3</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk122" value="sk122" onClick="calc()"></td></tr><tr><td colspan="2">クリティカル発生率8%上昇</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk313">鋭気</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk313" value="sk313" onClick="calc()"></td></tr><tr><td colspan="2">HPが最大の時にクリティカル発生率+10%</td></tr>
+			</tbody>
+		</table>
+
+		<h2>ダメージアップ</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk123">急所狙い</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk123" value="sk123" onClick="calc()"></td></tr><tr><td colspan="2">クリティカル発生時の威力を30%上げる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk296">急所狙い・改</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk296" value="sk296" onClick="calc()"></td></tr><tr><td colspan="2">クリティカル発生時の威力を50%上げる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk165">炎アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk165" value="sk165" onClick="calc()"></td></tr><tr><td colspan="2">炎属性攻撃の威力が20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk166">氷アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk166" value="sk166" onClick="calc()"></td></tr><tr><td colspan="2">氷属性攻撃の威力が20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk167">樹アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk167" value="sk167" onClick="calc()"></td></tr><tr><td colspan="2">樹属性攻撃の威力が20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk168">雷アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk168" value="sk168" onClick="calc()"></td></tr><tr><td colspan="2">雷属性攻撃の威力が20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk169">光アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk169" value="sk169" onClick="calc()"></td></tr><tr><td colspan="2">光属性攻撃の威力が20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk170">闇アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk170" value="sk170" onClick="calc()"></td></tr><tr><td colspan="2">闇属性攻撃の威力が20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk211">スカイハイ</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk211" value="sk211" onClick="calc()"></td></tr><tr><td colspan="2">空中にいる敵に対するダメージが20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk285">背閃撃</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk285" value="sk285" onClick="calc()"></td></tr><tr><td colspan="2">背後から物理攻撃した時ダメージが30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk212">不意打ち</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk212" value="sk212" onClick="calc()"></td></tr><tr><td colspan="2">背後から攻撃した時のダメージが50%増加する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk213">テラーメルス</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk213" value="sk213" onClick="calc()"></td></tr><tr><td colspan="2">状態異常中の敵に対するダメージが上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk214">マグリオン</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk214" value="sk214" onClick="calc()"></td></tr><tr><td colspan="2">遠距離物理攻撃時、距離があるほどダメージアップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk259">貫通</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk259" value="sk259" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃時、確率で敵の防御力を大低下してダメージを与える</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk260">聖なるオーラ</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk260" value="sk260" onClick="calc()"></td></tr><tr><td colspan="2">装備武器の攻撃力アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk271">チャンスドライブ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk271" value="sk271" onClick="calc()"></td></tr><tr><td colspan="2">気絶、ブレイク状態の敵に対するダメージ量アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk282">星眼</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk282" value="sk282" onClick="calc()"></td></tr><tr><td colspan="2">攻撃系の特技の発動時、最大MPの3%を消費してダメージ+50%</td></tr>
+			</tbody>
+		</table>
+
+		<h2>キラー/スレイヤー</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk136">ビーストキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk136" value="sk136" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で獣系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk137">ビーストスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk137" value="sk137" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で獣系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk138">プラントキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk138" value="sk138" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で植物系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk139">プラントスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk139" value="sk139" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で植物系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk140">インセクトキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk140" value="sk140" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で昆虫系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk141">インセクトスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk141" value="sk141" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で昆虫系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk142">バードキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk142" value="sk142" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で鳥系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk143">バードスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk143" value="sk143" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で鳥系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk144">クリートキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk144" value="sk144" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で魔法生物系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk145">クリートスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk145" value="sk145" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で魔法生物系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk146">アンデットキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk146" value="sk146" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で不死生物系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk147">アンデットスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk147" value="sk147" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で不死生物系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk148">ストーンキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk148" value="sk148" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で鉱石系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk149">ストーンスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk149" value="sk149" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で鉱石系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk150">マシーンキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk150" value="sk150" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で機械系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk151">フィッシュキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk151" value="sk151" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で魚系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk152">フィッシュスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk152" value="sk152" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で魚系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk153">スピリットキラー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk153" value="sk153" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で精霊系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk154">スピリットスレイヤー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk154" value="sk154" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で精霊系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk155">ドラゴンキラー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk155" value="sk155" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で竜系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk156">ドラゴンスレイヤー</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk156" value="sk156" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で竜系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk157">ゴッドキラー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk157" value="sk157" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で神系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk158">ゴッドスレイヤー</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk158" value="sk158" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃で神系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk159">ソルジャーキラー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk159" value="sk159" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃でソルジャー系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk160">ソルジャースレイヤー</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk160" value="sk160" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃でソルジャー系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk161">ナイトキラー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk161" value="sk161" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃でナイト系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk162">ナイトスレイヤー</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk162" value="sk162" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃でナイト系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk163">スナイパーキラー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk163" value="sk163" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃でスナイパー系に効果大</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk164">ウイッチキラー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk164" value="sk164" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃で魔法使い系に効果大</td></tr>
+			</tbody>
+		</table>
+
+		<h2>ガード</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk125">ガード</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk125" value="sk125" onClick="calc()"></td></tr><tr><td colspan="2">ユニットが確率で自動ガードするようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk126">鉄壁ガード</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk126" value="sk126" onClick="calc()"></td></tr><tr><td colspan="2">【ガード装備時のみ発動】ガード時のダメージ軽減率が上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk127">警戒</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk127" value="sk127" onClick="calc()"></td></tr><tr><td colspan="2">【ガード装備時のみ発動】ガードの確率が少しアップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk128">魔法ガード</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk128" value="sk128" onClick="calc()"></td></tr><tr><td colspan="2">【ガード装備時のみ発動】確率で魔法も自動ガードするようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk129">ヒールガード</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk129" value="sk129" onClick="calc()"></td></tr><tr><td colspan="2">【ガード装備時のみ発動】ガードするとHPが少し回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk130">マジカルガード</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk130" value="sk130" onClick="calc()"></td></tr><tr><td colspan="2">【ガード装備時のみ発動】ガードするとMPが少し回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk131">グランドガード</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk131" value="sk131" onClick="calc()"></td></tr><tr><td colspan="2">【ガード装備時のみ発動】ガードブレイクが起きにくくなる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk132">ロイヤルアーマー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk132" value="sk132" onClick="calc()"></td></tr><tr><td colspan="2">クリティカル攻撃を受ける確率を減少させる</td></tr>
+			</tbody>
+		</table>
+
+		<h2>ブレイク</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk272">ブレイカー</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk272" value="sk272" onClick="calc()"></td></tr><tr><td colspan="2">ブレイク値を増やす</td></tr>
+			</tbody>
+		</table>
+
+		<h2>装備</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk171">剣装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk171" value="sk171" onClick="calc()"></td></tr><tr><td colspan="2">剣を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk172">斧装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk172" value="sk172" onClick="calc()"></td></tr><tr><td colspan="2">斧を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk173">槍装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk173" value="sk173" onClick="calc()"></td></tr><tr><td colspan="2">槍を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk174">槌装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk174" value="sk174" onClick="calc()"></td></tr><tr><td colspan="2">槌を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk175">弓装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk175" value="sk175" onClick="calc()"></td></tr><tr><td colspan="2">弓を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk176">機械装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk176" value="sk176" onClick="calc()"></td></tr><tr><td colspan="2">機械を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk177">爪装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk177" value="sk177" onClick="calc()"></td></tr><tr><td colspan="2">爪を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk178">杖装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk178" value="sk178" onClick="calc()"></td></tr><tr><td colspan="2">杖を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk179">鎧装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk179" value="sk179" onClick="calc()"></td></tr><tr><td colspan="2">鎧を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk180">服装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk180" value="sk180" onClick="calc()"></td></tr><tr><td colspan="2">服を装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk181">ローブ装備</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk181" value="sk181" onClick="calc()"></td></tr><tr><td colspan="2">ローブを装備できるようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk264">二刀流</td><td>SC:14</td><td rowspan="2"><input type="checkbox" name="sk264" value="sk264" onClick="calc()"></td></tr><tr><td colspan="2">防具枠に武器を装備することができる</td></tr>
+			</tbody>
+		</table>
+
+		<h2>耐性/無効</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk182">毒耐性</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk182" value="sk182" onClick="calc()"></td></tr><tr><td colspan="2">毒がかかりにくくなる(毒が弱点の場合は弱点を消す)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk188">毒無効</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk188" value="sk188" onClick="calc()"></td></tr><tr><td colspan="2">毒を無効化する(毒が弱点の場合は毒耐性になる)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk183">暗闇耐性</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk183" value="sk183" onClick="calc()"></td></tr><tr><td colspan="2">暗闇がかかりにくくなる(暗闇が弱点の場合は弱点を消す)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk189">暗闇無効</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk189" value="sk189" onClick="calc()"></td></tr><tr><td colspan="2">暗闇を無効化する(暗闇が弱点の場合は暗闇耐性になる)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk184">沈黙耐性</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk184" value="sk184" onClick="calc()"></td></tr><tr><td colspan="2">沈黙がかかりにくくなる(沈黙が弱点の場合は弱点を消す)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk190">沈黙無効</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk190" value="sk190" onClick="calc()"></td></tr><tr><td colspan="2">沈黙を無効化する(沈黙が弱点の場合は沈黙耐性になる)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk185">呪い耐性</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk185" value="sk185" onClick="calc()"></td></tr><tr><td colspan="2">呪いがかかりにくくなる(呪いが弱点の場合は弱点を消す)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk191">呪い無効</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk191" value="sk191" onClick="calc()"></td></tr><tr><td colspan="2">呪いを無効化する(呪いが弱点の場合は呪い耐性になる)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk186">麻痺耐性</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk186" value="sk186" onClick="calc()"></td></tr><tr><td colspan="2">麻痺がかかりにくくなる(麻痺が弱点の場合は弱点を消す)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk192">麻痺無効</td><td>SC:10</td><td rowspan="2"><input type="checkbox" name="sk192" value="sk192" onClick="calc()"></td></tr><tr><td colspan="2">麻痺を無効化する(麻痺が弱点の場合は麻痺耐性になる)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk187">病気耐性</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk187" value="sk187" onClick="calc()"></td></tr><tr><td colspan="2">病気にかかりにくくなる(病気が弱点の場合は弱点を消す)</td></tr>
+			</tbody>
+		</table>
+
+		<h2>ファスト/オート</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk193">ファストブレイブ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk193" value="sk193" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に自動ブレイブ発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk197">オートブレイブ</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk197" value="sk197" onClick="calc()"></td></tr><tr><td colspan="2">常にブレイブの効果(攻撃力アップ)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk194">ファストオーラ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk194" value="sk194" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に自動オーラ発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk199">オートオーラ</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk199" value="sk199" onClick="calc()"></td></tr><tr><td colspan="2">常にオーラの効果(魔力アップ)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk195">ファストプロテクション</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk195" value="sk195" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に自動プロテクション発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk198">オートプロテクション</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk198" value="sk198" onClick="calc()"></td></tr><tr><td colspan="2">常にプロテクションの効果(物理ダメージ減少)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk196">ファストバリア</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk196" value="sk196" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に自動バリア発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk200">オートバリア</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk200" value="sk200" onClick="calc()"></td></tr><tr><td colspan="2">常にマジックバリアの効果(魔法ダメージ減少)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk281">ファストクリティカル</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk281" value="sk281" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に自動クリティカル発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk314">オートクリティカル</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk314" value="sk314" onClick="calc()"></td></tr><tr><td colspan="2">常に魔法「クリティカル」の効果が掛かった状態になる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk283">ファストメティス</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk283" value="sk283" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に自動メティス発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk288">ファスト中級魔法陣</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk288" value="sk288" onClick="calc()"></td></tr><tr><td colspan="2">バトル開始時に中級魔法陣展開を自動発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk290">ファストバケーション</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk290" value="sk290" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時にブレイブ、オーラ、プロテクション、マジックバリアが自動で発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk294">ファストアイスウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk294" value="sk294" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時にアイスウォールを自動で発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk310">ファストホーリーウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk310" value="sk310" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時にホーリーウォールを自動で発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk201">オートリジェネ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk201" value="sk201" onClick="calc()"></td></tr><tr><td colspan="2">常にリジェネの効果(HPを徐々に回復)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk202">オートヘイスト</td><td>SC:14</td><td rowspan="2"><input type="checkbox" name="sk202" value="sk202" onClick="calc()"></td></tr><tr><td colspan="2">常にヘイストの効果(味方１体のスキル回復速度アップ)</td></tr>
+			</tbody>
+		</table>
+
+		<h2>ブースト</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk216">炎ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk216" value="sk216" onClick="calc()"></td></tr><tr><td colspan="2">炎属性魔法攻撃の威力が10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk223">炎ハイブースト</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk223" value="sk223" onClick="calc()"></td></tr><tr><td colspan="2">炎属性魔法攻撃の威力が30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk217">氷ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk217" value="sk217" onClick="calc()"></td></tr><tr><td colspan="2">氷属性魔法攻撃の威力が10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk224">氷ハイブースト</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk224" value="sk224" onClick="calc()"></td></tr><tr><td colspan="2">氷属性魔法攻撃の威力が30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk218">樹ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk218" value="sk218" onClick="calc()"></td></tr><tr><td colspan="2">樹属性魔法攻撃の威力が10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk225">樹ハイブースト</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk225" value="sk225" onClick="calc()"></td></tr><tr><td colspan="2">樹属性魔法攻撃の威力が30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk219">雷ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk219" value="sk219" onClick="calc()"></td></tr><tr><td colspan="2">雷属性魔法攻撃の威力が10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk226">雷ハイブースト</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk226" value="sk226" onClick="calc()"></td></tr><tr><td colspan="2">雷属性魔法攻撃の威力が30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk220">光ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk220" value="sk220" onClick="calc()"></td></tr><tr><td colspan="2">光属性魔法攻撃の威力が10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk227">光ハイブースト</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk227" value="sk227" onClick="calc()"></td></tr><tr><td colspan="2">光属性魔法攻撃の威力が30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk221">闇ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk221" value="sk221" onClick="calc()"></td></tr><tr><td colspan="2">闇属性魔法攻撃の威力が10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk228">闇ハイブースト</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk228" value="sk228" onClick="calc()"></td></tr><tr><td colspan="2">闇属性魔法攻撃の威力が30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk222">回復ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk222" value="sk222" onClick="calc()"></td></tr><tr><td colspan="2">回復魔法の威力10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk250">斧ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk250" value="sk250" onClick="calc()"></td></tr><tr><td colspan="2">斧装備時に物理攻撃の威力が25％アップし、ブレイク値を増やす</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk295">剣ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk295" value="sk295" onClick="calc()"></td></tr><tr><td colspan="2">剣装備時に物理攻撃の威力が30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk312">槍ブースト</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk312" value="sk312" onClick="calc()"></td></tr><tr><td colspan="2">槍装備時に物理攻撃の威力が5%アップし、受ける物理ダメージ-5%</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk324">ローブハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk324" value="sk324" onClick="calc()"></td></tr><tr><td colspan="2">ローブ装備時にMNDが20%アップし、魔法攻撃の威力が20%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk326">服ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk326" value="sk326" onClick="calc()"></td></tr><tr><td colspan="2">服装備時にDEFとMNDが10%アップし、物理攻撃ダメージが10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk286">特攻ブースト</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk286" value="sk286" onClick="calc()"></td></tr><tr><td colspan="2">特攻発生時、威力が50%アップ</td></tr>
+			</tbody>
+		</table>
+
+		<h2>状態異常付与</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk235">毒研究</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk235" value="sk235" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で敵を毒にする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk236">暗闇研究</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk236" value="sk236" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で敵を暗闇にする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk237">沈黙研究</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk237" value="sk237" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で敵を沈黙にする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk238">呪い研究</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk238" value="sk238" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で敵を呪いにする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk239">病気研究</td><td>SC:10</td><td rowspan="2"><input type="checkbox" name="sk239" value="sk239" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で敵を病気にする</td></tr>
+			</tbody>
+		</table>
+
+		<h2>HP回復</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk124">プラウドフォース</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk124" value="sk124" onClick="calc()"></td></tr><tr><td colspan="2">クリティカル発生時、HPを回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk240">ブラッドフォース</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk240" value="sk240" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率でHPを20%吸収する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk242">勝利のポーズ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk242" value="sk242" onClick="calc()"></td></tr><tr><td colspan="2">敵にトドメを刺した時、HPが10%回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk245">勝利の美酒</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk245" value="sk245" onClick="calc()"></td></tr><tr><td colspan="2">バトル終了時、HPが20%回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk256">ダメージ吸収</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk256" value="sk256" onClick="calc()"></td></tr><tr><td colspan="2">物理ダメージを受けた時、確率でHPが10%回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk266">デコイ</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk266" value="sk266" onClick="calc()"></td></tr><tr><td colspan="2">HPが0になった時、自動的に一度だけ復帰する(HP小回復)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk267">根性</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk267" value="sk267" onClick="calc()"></td></tr><tr><td colspan="2">即死ダメージを受けた際、一度だけ耐えてHPを小回復</td></tr>
+			</tbody>
+		</table>
+
+		<h2>MP回復</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk241">女神のキス</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk241" value="sk241" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率でMPを2%吸収する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk244">栄誉のポーズ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk244" value="sk244" onClick="calc()"></td></tr><tr><td colspan="2">敵にトドメを刺した時、MPが5%回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk247">栄誉の美酒</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk247" value="sk247" onClick="calc()"></td></tr><tr><td colspan="2">バトル終了時、MPが10%回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk248">大天使の加護</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk248" value="sk248" onClick="calc()"></td></tr><tr><td colspan="2">バトル終了時、MPが30%回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk257">劇薬</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk257" value="sk257" onClick="calc()"></td></tr><tr><td colspan="2">状態異常中、MP自動回復･スキル回復速度アップ</td></tr>
+			</tbody>
+		</table>
+
+		<h2>SCT増加</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk243">栄光のポーズ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk243" value="sk243" onClick="calc()"></td></tr><tr><td colspan="2">敵にトドメを刺した時、SCTが少し回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk246">栄光の美酒</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk246" value="sk246" onClick="calc()"></td></tr><tr><td colspan="2">バトル終了時、SCTが回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk251">チャージ特技1</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk251" value="sk251" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に1番目の特技のSCTを一定量回復(左上に位置する特技)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk287">チャージ特技2</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk287" value="sk287" onClick="calc()"></td></tr><tr><td colspan="2">バトル開始時に2番目の特技(右上に位置する特技)を一定量回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk322">チャージ特技3</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk322" value="sk322" onClick="calc()"></td></tr><tr><td colspan="2">戦闘開始時に3番目の特技のSCTを一定量回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk293">ストック特技1</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk293" value="sk293" onClick="calc()"></td></tr><tr><td colspan="2">1番目の特技のストック数を1回分増やす(左上に位置する特技)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk325">ストック特技2</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk325" value="sk325" onClick="calc()"></td></tr><tr><td colspan="2">2番目の特技の最大ストック数を1回分増やす</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk249">海賊の宴</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk249" value="sk249" onClick="calc()"></td></tr><tr><td colspan="2">バトル終了時、SCTが全回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk279">精霊呼吸法</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk279" value="sk279" onClick="calc()"></td></tr><tr><td colspan="2">HPが回復するスキルを受けた時、SCTが少し回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk284">ガードチャージ</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk284" value="sk284" onClick="calc()"></td></tr><tr><td colspan="2">【ガード装備時にのみ発動】ガードするとSCTが少し回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk316">クイックトリガー</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk316" value="sk316" onClick="calc()"></td></tr><tr><td colspan="2">バトル開始時に、特技のどれかがランダムで1回分回復する</td></tr>
+			</tbody>
+		</table>
+
+		<h2>移動速度</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk133">蜃気楼</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk133" value="sk133" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃を確率で回避する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk258">韋駄天</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk258" value="sk258" onClick="calc()"></td></tr><tr><td colspan="2">移動速度アップ</td></tr>
+			</tbody>
+		</table>
+
+		<h2>追加攻撃</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk134">カウンター</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk134" value="sk134" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃を受けたら確率で反撃する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk135">ハイカウンター</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk135" value="sk135" onClick="calc()"></td></tr><tr><td colspan="2">カウンターの威力が上昇する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk261">追撃</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk261" value="sk261" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で追加ダメージ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk262">ダブルインパクト</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk262" value="sk262" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、追加ダメージ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk263">トリプルインパクト</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk263" value="sk263" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、追加ダメージ×2</td></tr>
+			</tbody>
+		</table>
+
+		<h2>擬態</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk291">擬態【植物】</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk291" value="sk291" onClick="calc()"></td></tr><tr><td colspan="2">タイプに植物系を追加</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk311">擬態【竜】</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk311" value="sk311" onClick="calc()"></td></tr><tr><td colspan="2">タイプに竜を追加</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk318">擬態【神】</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk318" value="sk318" onClick="calc()"></td></tr><tr><td colspan="2">タイプに神を追加</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk328">擬態【不死生物】</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk328" value="sk328" onClick="calc()"></td></tr><tr><td colspan="2">タイプに不死生物を追加</td></tr>
+			</tbody>
+		</table>
+
+		<h2>ダメージ軽減</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk308">ゴッドシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk308" value="sk308" onClick="calc()"></td></tr><tr><td colspan="2">神系タイプから受けるダメージ-10%</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk321">ソルジャーシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk321" value="sk321" onClick="calc()"></td></tr><tr><td colspan="2">ソルジャー系タイプから受けるダメージ-10%</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk323">アンデッドシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk323" value="sk323" onClick="calc()"></td></tr><tr><td colspan="2">不死生物系タイプから受けるダメージ-10%</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk309">天塊</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk309" value="sk309" onClick="calc()"></td></tr><tr><td colspan="2">物理ダメージを受けた時、MPを3消費して受けるダメージを半減</td></tr>
+			</tbody>
+		</table>
+
+		<h2>魔法系技能</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk253">魔転相</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk253" value="sk253" onClick="calc()"></td></tr><tr><td colspan="2">魔力が高いほど通常攻撃の威力が上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk252">不動の陣</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk252" value="sk252" onClick="calc()"></td></tr><tr><td colspan="2">魔法詠唱が一部攻撃を除き中断されなくなる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk268">魔導オーラ</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk268" value="sk268" onClick="calc()"></td></tr><tr><td colspan="2">攻撃魔法の消費MPが増加する代わりに、威力上昇</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk278">高位魔法詠唱陣</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk278" value="sk278" onClick="calc()"></td></tr><tr><td colspan="2">全ての魔法の詠唱速度がとても上がる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk315">光降る聖夜</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk315" value="sk315" onClick="calc()"></td></tr><tr><td colspan="2">現実時間の夜にセットしていると光魔法効果アップ</td></tr>
+			</tbody>
+		</table>
+
+		<h2>魔法クリティカル</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk229">炎クリティカル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk229" value="sk229" onClick="calc()"></td></tr><tr><td colspan="2">炎属性攻撃魔法がクリティカルするようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk230">氷クリティカル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk230" value="sk230" onClick="calc()"></td></tr><tr><td colspan="2">氷属性攻撃魔法がクリティカルするようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk231">樹クリティカル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk231" value="sk231" onClick="calc()"></td></tr><tr><td colspan="2">樹属性攻撃魔法がクリティカルするようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk232">雷クリティカル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk232" value="sk232" onClick="calc()"></td></tr><tr><td colspan="2">雷属性攻撃魔法がクリティカルするようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk233">光クリティカル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk233" value="sk233" onClick="calc()"></td></tr><tr><td colspan="2">光属性攻撃魔法がクリティカルするようになる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk234">闇クリティカル</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk234" value="sk234" onClick="calc()"></td></tr><tr><td colspan="2">闇属性攻撃魔法がクリティカルするようになる</td></tr>
+			</tbody>
+		</table>
+
+		<h2>その他</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk215">ピヨリン</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk215" value="sk215" onClick="calc()"></td></tr><tr><td colspan="2">敵が気絶しやすくなる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk254">魅惑の香り</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk254" value="sk254" onClick="calc()"></td></tr><tr><td colspan="2">敵に狙われやすくなる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk255">激臭王</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk255" value="sk255" onClick="calc()"></td></tr><tr><td colspan="2">敵に狙われにくくなる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk265">衝撃波</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk265" value="sk265" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃時、確率で敵のガードを解除する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk269">ＥＸＰアップ</td><td>SC:12</td><td rowspan="2"><input type="checkbox" name="sk269" value="sk269" onClick="calc()"></td></tr><tr><td colspan="2">戦闘後の貰える経験値が20%増加</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk270">ゴールドラッシュ</td><td>SC:12</td><td rowspan="2"><input type="checkbox" name="sk270" value="sk270" onClick="calc()"></td></tr><tr><td colspan="2">戦闘後に追加でゼルがもらえる(重複不可)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk273">死神</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk273" value="sk273" onClick="calc()"></td></tr><tr><td colspan="2">物理攻撃時、確率で即死させる(ボス、アリーナは無効)</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk274">急速回復</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk274" value="sk274" onClick="calc()"></td></tr><tr><td colspan="2">状態異常回復の必要時間が軽減する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk275">意識集中</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk275" value="sk275" onClick="calc()"></td></tr><tr><td colspan="2">気絶時間が短くなる</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk280">カムイノミ</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk280" value="sk280" onClick="calc()"></td></tr><tr><td colspan="2">状態異常回復を受けた時、回復した状態異常の耐性バフ(+1)が自動で発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk292">腐食の牙</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="sk292" value="sk292" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で敵に一定時間物理被ダメージ20％アップのデバフを付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk331">黄泉の理</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk331" value="sk331" onClick="calc()"></td></tr><tr><td colspan="2">蘇生時にSTR・INTが30%アップ<br>クリティカル発生率が15%アップ</td></tr>
+			</tbody>
+		</table>
+
+		<h2>聖剣伝説</h2>
+		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+			<tbody>
+				<tr style="background-color: #e6e6e6;">
+					<th style="width: 60%;">スキル名</th>
+					<th style="width: 35%;">SC/MP</th>
+					<th style="width: 5%;"></th>
+				</tr>
+				<tr><td  style="font-weight: 900;" id="sk082">ヒールウォーター</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk082" value="sk082" onClick="calc()"></td></tr><tr><td colspan="2">味方単体のHPを回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk083">アシッドストーム</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk083" value="sk083" onClick="calc()"></td></tr><tr><td colspan="2">敵全体に氷属性の攻撃確率で敵にDEFダウンの効果を付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk084">ルナティック</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk084" value="sk084" onClick="calc()"></td></tr><tr><td colspan="2">不思議なことがランダムで発生する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk085">エリクサー</td><td>SC:12</td><td rowspan="2"><input type="checkbox" name="sk085" value="sk085" onClick="calc()"></td></tr><tr><td colspan="2">MPをすべて消費してHPを超回復し、SCTを全回復</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk086">ムーンセイバー</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk086" value="sk086" onClick="calc()"></td></tr><tr><td colspan="2">味方単体に、通常攻撃にHP吸収の効果を付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk087">ホーリーボール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk087" value="sk087" onClick="calc()"></td></tr><tr><td colspan="2">中範囲の敵に光属性の攻撃</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk088">フルメタルハガー</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk088" value="sk088" onClick="calc()"></td></tr><tr><td colspan="2">基本状態異常を一度だけ無効化するバリアを付与</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk297">ダッシュ</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk297" value="sk297" onClick="calc()"></td></tr><tr><td colspan="2">超必殺技ゲージが溜まりづらくなるが移動速度アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk298">パワーカウンター</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk298" value="sk298" onClick="calc()"></td></tr><tr><td colspan="2">超必殺技ゲージが最大まで溜まった状態でSTRが30%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk299">マナの加護</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk299" value="sk299" onClick="calc()"></td></tr><tr><td colspan="2">瀕死時に一度だけ、プロテクション、マジックバリア、スピード、リジェネが自動で発動</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk300">そうだん</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk300" value="sk300" onClick="calc()"></td></tr><tr><td colspan="2">たまにHPが小回復する</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk301">ジェマの騎士</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk301" value="sk301" onClick="calc()"></td></tr><tr><td colspan="2">確率で魔法ダメージを無効化</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk302">マナの祝日</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk302" value="sk302" onClick="calc()"></td></tr><tr><td colspan="2">現実時間の日曜日の間STR・DEF・INT・MNDが+5%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk303">アマンダの血</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk303" value="sk303" onClick="calc()"></td></tr><tr><td colspan="2">呪いの回復速度がアップする</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk304">マトック</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk304" value="sk304" onClick="calc()"></td></tr><tr><td colspan="2">鉱石系に対してクリティカル発生率+10%</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk305">モンキーベイビー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk305" value="sk305" onClick="calc()"></td></tr><tr><td colspan="2">通常攻撃時、確率で敵を沈黙にし、沈黙状態の敵にへのダメージ+30%</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk306">ウィスプの刻</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk306" value="sk306" onClick="calc()"></td></tr><tr><td colspan="2">現実時間の昼(6:00～17:59)の間光属性魔法攻撃の威力が10%アップ</td></tr>
+				<tr><td  style="font-weight: 900;" id="sk307">シェイドの刻</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk307" value="sk307" onClick="calc()"></td></tr><tr><td colspan="2">現実時間の夜(18:00～5:59)の間闇属性魔法攻撃の威力が10%アップ</td></tr>
+			</tbody>
+		</table>
+	</form>
+
+	<h2>選択スキル一覧</h2>
+	<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+		<tbody>
+			<tr style="background-color: #e6e6e6;">
+				<th style="width: 40%;">ユニットスキル名</th>
+			</tr>
+		</tbody>
+		<tbody id="skillTable">
+		</tbody>
+	</table>
+	<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+		<tbody>
+			<tr style="background-color: #e6e6e6;">
+				<th style="width: 40%;">スキル名<br>SC/MP</th>
+				<th>取得アーク</th>
+				<th style="width: 10%;"></th>
+			</tr>
+		</tbody>
+		<tbody id="checkList">
+		</tbody>
+	</table>
+
+	選択スキル(コピー用)
+	<textarea id="copyList" rows="4" cols="40"></textarea>
+
+	<p><input type="button" value="全てのチェックを外す" onclick="allDisCheck();"></p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<style type="text/css">.non-ads{display:none;}</style>
+</body>
+<footer>
+	<div class="allSc">
+		合計　<span id="result"></span>
+	</div>
+</footer>
+</html>
