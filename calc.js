@@ -198,17 +198,17 @@ function getSkillName(listKey){
 	var arc = "";
 	var url = "";
 	myList = "<tr><td>"
-	myList = eval(`skillList.${listKey}[0].skill`);
-	myList = "</td><td>"
+	myList += eval(`skillList.${listKey}[0].skill`);
+	myList += "</td><td>"
 	myList += eval(`skillList.${listKey}[0].eff`);
-	myList = "</td><td>"
+	myList += "</td><td>"
 	var arcValue = eval(`skillList.${listKey}[1].arc`);
 	for (var my = 0; my < arcValue.length; my++) {
-		arc = eval(`arcData.${arcValue[my]}[0]`);
+		arc += eval(`arcData.${arcValue[my]}[0]`);
 		// url = eval(`arcData.${arcValue[my]}[1]`);
 		myList += arc + newLine;
 	}
-	myList = "</td></tr>"
+	myList += "</td></tr>"
 	return myList;
 }
 
