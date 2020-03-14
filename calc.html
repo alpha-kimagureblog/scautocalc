@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>サンプル</title>
 	<link rel="stylesheet" type="text/css" href="calc.css">
-	<script src="calc.js"></script>
+	<script src="test.js"></script>
 </head>
 <body>
 	<form name="scCalc1">
@@ -51,6 +51,7 @@
 			<option value="uni048">リリー</option>
 			<option value="uni049">ティンキリ</option>
 			<option value="uni050">ザイクス</option>
+			<option value="uni051">クレアとダルギオン</option>
 			<option value="uni018">ガウル</option>
 			<option value="uni019">ゴブル</option>
 			<option value="uni020">ホブゴブル</option>
@@ -65,7 +66,8 @@
 		<br>
 		<br>
 		<br>
-		<h2>HP回復魔法</h2>
+		<h2>魔法スキル</h2>
+		<h3>HP回復魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -82,10 +84,11 @@
 				<tr id="sk014"><td style="font-weight: 900;">ハイリジェネ</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk014" value="sk014" onClick="calc()"></td></tr><tr id="sk014sub"><td colspan="2">味方単体に徐々にHPが回復する効果を付与</td></tr>
 				<tr id="sk019"><td style="font-weight: 900;">グランドリジェネ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk019" value="sk019" onClick="calc()"></td></tr><tr id="sk019sub"><td colspan="2">味方全体に徐々にHPが中回復する効果を付与</td></tr>
 				<tr id="sk078"><td style="font-weight: 900;">バイタリティ</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk078" value="sk078" onClick="calc()"></td></tr><tr id="sk078sub"><td colspan="2">味方単体のHP上限を1000増やすと同時に回復</td></tr>
+				<tr id="sk386"><td style="font-weight: 900;">ハイバイタリティ</td><td>SC:8</td><td rowspan="2"><input type="checkbox" name="sk386" value="sk386" onClick="calc()"></td></tr><tr id="sk386sub"><td colspan="2">味方単体のHP上限を2000増やすと同時に回復</td></tr>
 			</tbody>
 		</table>
 
-		<h2>状態異常回復魔法</h2>
+		<h3>状態異常回復魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -108,7 +111,7 @@
 			</tbody>
 		</table>
 
-		<h2>戦闘不能回復魔法</h2>
+		<h3>戦闘不能回復魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -120,7 +123,7 @@
 			</tbody>
 		</table>
 
-		<h2>攻撃魔法</h2>
+		<h3>攻撃魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -152,7 +155,7 @@
 			</tbody>
 		</table>
 
-		<h2>状態異常魔法</h2>
+		<h3>状態異常魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -170,7 +173,7 @@
 			</tbody>
 		</table>
 
-		<h2>バフ魔法</h2>
+		<h3>バフ魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -210,7 +213,7 @@
 			</tbody>
 		</table>
 
-		<h2>デバフ魔法</h2>
+		<h3>デバフ魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -233,7 +236,8 @@
 			</tbody>
 		</table>
 
-		<h2>ステータスアップ</h2>
+		<h2>技能スキル</h2>
+		<h3>ステータスアップ</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -244,6 +248,7 @@
 				<tr id="sk096"><td style="font-weight: 900;">HPアップ</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk096" value="sk096" onClick="calc()"></td></tr><tr id="sk096sub"><td colspan="2">HPを5%アップする</td></tr>
 				<tr id="sk097"><td style="font-weight: 900;">HPアップ2</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk097" value="sk097" onClick="calc()"></td></tr><tr id="sk097sub"><td colspan="2">HPを8%アップする</td></tr>
 				<tr id="sk098"><td style="font-weight: 900;">HPアップ3</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk098" value="sk098" onClick="calc()"></td></tr><tr id="sk098sub"><td colspan="2">HPを12%アップする</td></tr>
+				<tr id="sk384"><td style="font-weight: 900;">HPアップ4</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk384" value="sk384" onClick="calc()"></td></tr><tr id="sk384sub"><td colspan="2">HPを15%アップする</td></tr>
 				<tr id="sk099"><td style="font-weight: 900;">HPアップ極</td><td>SC:5</td><td rowspan="2"><input type="checkbox" name="sk099" value="sk099" onClick="calc()"></td></tr><tr id="sk099sub"><td colspan="2">HPを20%アップする</td></tr>
 				<tr id="sk100"><td style="font-weight: 900;">MPアップ</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="sk100" value="sk100" onClick="calc()"></td></tr><tr id="sk100sub"><td colspan="2">MPを5%アップする</td></tr>
 				<tr id="sk101"><td style="font-weight: 900;">MPアップ2</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="sk101" value="sk101" onClick="calc()"></td></tr><tr id="sk101sub"><td colspan="2">MPを8%アップする</td></tr>
@@ -282,7 +287,7 @@
 			</tbody>
 		</table>
 
-		<h2>クリティカル</h2>
+		<h3>クリティカル</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -297,7 +302,7 @@
 			</tbody>
 		</table>
 
-		<h2>ダメージアップ</h2>
+		<h3>ダメージアップ</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -325,7 +330,7 @@
 			</tbody>
 		</table>
 
-		<h2>キラー/スレイヤー</h2>
+		<h3>キラー/スレイヤー</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -365,7 +370,7 @@
 			</tbody>
 		</table>
 
-		<h2>ガード</h2>
+		<h3>ガード</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -384,7 +389,7 @@
 			</tbody>
 		</table>
 
-		<h2>ブレイク</h2>
+		<h3>ブレイク</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -396,7 +401,7 @@
 			</tbody>
 		</table>
 
-		<h2>装備</h2>
+		<h3>装備</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -419,7 +424,7 @@
 			</tbody>
 		</table>
 
-		<h2>耐性/無効</h2>
+		<h3>耐性/無効</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -441,7 +446,7 @@
 			</tbody>
 		</table>
 
-		<h2>ファスト/オート</h2>
+		<h3>ファスト/オート</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -469,7 +474,7 @@
 			</tbody>
 		</table>
 
-		<h2>ブースト</h2>
+		<h3>ブースト</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -496,10 +501,11 @@
 				<tr id="sk324"><td style="font-weight: 900;">ローブハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk324" value="sk324" onClick="calc()"></td></tr><tr id="sk324sub"><td colspan="2">ローブ装備時にMNDが20%アップし、魔法攻撃の威力が20%アップ</td></tr>
 				<tr id="sk326"><td style="font-weight: 900;">服ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk326" value="sk326" onClick="calc()"></td></tr><tr id="sk326sub"><td colspan="2">服装備時にDEFとMNDが10%アップし、物理攻撃ダメージが10%アップ</td></tr>
 				<tr id="sk286"><td style="font-weight: 900;">特攻ブースト</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk286" value="sk286" onClick="calc()"></td></tr><tr id="sk286sub"><td colspan="2">特攻発生時、威力が50%アップ</td></tr>
+				<tr id="sk387"><td style="font-weight: 900;">槌ハイブースト</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="sk387" value="sk387" onClick="calc()"></td></tr><tr id="sk387sub"><td colspan="2">槌装備時に物理攻撃の威力が25%アップしSTRが10%アップ</td></tr>
 			</tbody>
 		</table>
 
-		<h2>状態異常付与</h2>
+		<h3>状態異常付与</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -515,7 +521,7 @@
 			</tbody>
 		</table>
 
-		<h2>HP回復</h2>
+		<h3>HP回復</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -533,7 +539,7 @@
 			</tbody>
 		</table>
 
-		<h2>MP回復</h2>
+		<h3>MP回復</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -549,7 +555,7 @@
 			</tbody>
 		</table>
 
-		<h2>SCT増加</h2>
+		<h3>SCT増加</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -571,7 +577,7 @@
 			</tbody>
 		</table>
 
-		<h2>移動速度</h2>
+		<h3>移動速度</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -584,7 +590,7 @@
 			</tbody>
 		</table>
 
-		<h2>追加攻撃</h2>
+		<h3>追加攻撃</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -600,7 +606,7 @@
 			</tbody>
 		</table>
 
-		<h2>擬態</h2>
+		<h3>擬態</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -615,7 +621,7 @@
 			</tbody>
 		</table>
 
-		<h2>ダメージ軽減</h2>
+		<h3>ダメージ軽減</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -626,11 +632,12 @@
 				<tr id="sk308"><td style="font-weight: 900;">ゴッドシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk308" value="sk308" onClick="calc()"></td></tr><tr id="sk308sub"><td colspan="2">神系タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk321"><td style="font-weight: 900;">ソルジャーシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk321" value="sk321" onClick="calc()"></td></tr><tr id="sk321sub"><td colspan="2">ソルジャー系タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk323"><td style="font-weight: 900;">アンデッドシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk323" value="sk323" onClick="calc()"></td></tr><tr id="sk323sub"><td colspan="2">不死生物系タイプから受けるダメージ-10%</td></tr>
+				<tr id="sk385"><td style="font-weight: 900;">ドラゴンシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk385" value="sk385" onClick="calc()"></td></tr><tr id="sk385sub"><td colspan="2">竜系タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk309"><td style="font-weight: 900;">天塊</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk309" value="sk309" onClick="calc()"></td></tr><tr id="sk309sub"><td colspan="2">物理ダメージを受けた時、MPを3消費して受けるダメージを半減</td></tr>
 			</tbody>
 		</table>
 
-		<h2>魔法系技能</h2>
+		<h3>魔法系技能</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -638,7 +645,6 @@
 					<th style="width: 35%;">SC/MP</th>
 					<th style="width: 5%;"></th>
 				</tr>
-				<tr id="sk253"><td style="font-weight: 900;">魔転相</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk253" value="sk253" onClick="calc()"></td></tr><tr id="sk253sub"><td colspan="2">魔力が高いほど通常攻撃の威力が上がる</td></tr>
 				<tr id="sk252"><td style="font-weight: 900;">不動の陣</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="sk252" value="sk252" onClick="calc()"></td></tr><tr id="sk252sub"><td colspan="2">魔法詠唱が一部攻撃を除き中断されなくなる</td></tr>
 				<tr id="sk268"><td style="font-weight: 900;">魔導オーラ</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk268" value="sk268" onClick="calc()"></td></tr><tr id="sk268sub"><td colspan="2">攻撃魔法の消費MPが増加する代わりに、威力上昇</td></tr>
 				<tr id="sk278"><td style="font-weight: 900;">高位魔法詠唱陣</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk278" value="sk278" onClick="calc()"></td></tr><tr id="sk278sub"><td colspan="2">全ての魔法の詠唱速度がとても上がる</td></tr>
@@ -646,7 +652,7 @@
 			</tbody>
 		</table>
 
-		<h2>魔法クリティカル</h2>
+		<h3>魔法クリティカル</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -663,7 +669,7 @@
 			</tbody>
 		</table>
 
-		<h2>その他</h2>
+		<h3>その他</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -671,6 +677,7 @@
 					<th style="width: 35%;">SC/MP</th>
 					<th style="width: 5%;"></th>
 				</tr>
+				<tr id="sk253"><td style="font-weight: 900;">魔転相</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="sk253" value="sk253" onClick="calc()"></td></tr><tr id="sk253sub"><td colspan="2">魔力が高いほど通常攻撃の威力が上がる</td></tr>
 				<tr id="sk215"><td style="font-weight: 900;">ピヨリン</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="sk215" value="sk215" onClick="calc()"></td></tr><tr id="sk215sub"><td colspan="2">敵が気絶しやすくなる</td></tr>
 				<tr id="sk254"><td style="font-weight: 900;">魅惑の香り</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk254" value="sk254" onClick="calc()"></td></tr><tr id="sk254sub"><td colspan="2">敵に狙われやすくなる</td></tr>
 				<tr id="sk255"><td style="font-weight: 900;">激臭王</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="sk255" value="sk255" onClick="calc()"></td></tr><tr id="sk255sub"><td colspan="2">敵に狙われにくくなる</td></tr>
@@ -686,7 +693,7 @@
 			</tbody>
 		</table>
 
-		<h2>聖剣伝説</h2>
+		<h3>聖剣伝説</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -716,61 +723,42 @@
 		</table>
 	</form>
 
-	<form name="scCalc2">
-		<h2>選択スキル一覧</h2>
-		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
-			<tbody>
-				<tr style="background-color: #e6e6e6;">
-					<th style="width: 60%;">スキル名</th>
-					<th style="width: 35%;">SC/MP</th>
-					<th style="width: 5%;"></th>
-				</tr>
-			</tbody>
-			<tbody id="checkList1">
-			</tbody>
-		</table>
+	<h2>ユニットスキル一覧</h2>
+	<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+		<tbody>
+			<tr style="background-color: #e6e6e6;">
+				<th style="width: 40%;">ユニットスキル名</th>
+			</tr>
+		</tbody>
+		<tbody id="skillTable">
+		</tbody>
+	</table>
 
-		<h2>ユニットスキル一覧</h2>
-		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
-			<tbody>
-				<tr style="background-color: #e6e6e6;">
-					<th style="width: 40%;">ユニットスキル名</th>
-				</tr>
-			</tbody>
-			<tbody id="skillTable">
-			</tbody>
-		</table>
-
-		<h2>習得するスキル</h2>
-		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
-			<tbody>
-				<tr style="background-color: #e6e6e6;">
-					<th style="width: 40%;">スキル名<br>SC/MP</th>
+	<h2>習得するスキル</h2>
+	<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
+		<tbody>
+			<tr style="background-color: #e6e6e6;">
+				<th style="width: 40%;">スキル名
+					SC/MP</th>
 					<th>取得アーク</th>
 					<th style="width: 10%;"></th>
 				</tr>
 			</tbody>
-			<tbody id="checkList2">
-			</tbody>
+			<tbody id="checkList2"></tbody>
 		</table>
-	</form>
+		選択スキル(コピー用)
+		<input type="button" value="スキル一覧をコピー" onclick="copyToClipboard();" />※スマホ未対応
 
-	選択スキル(コピー用)
-	<textarea id="copyList" rows="4" cols="40"></textarea>
+		<textarea id="copyList" cols="40" rows="4"></textarea>
+		<br><span id="copyTarget"></span>
 
-	<p><input type="button" value="全てのチェックを外す" onclick="allDisCheck();"></p>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<style type="text/css">.non-ads{display:none;}</style>
-</body>
-<footer>
-	<div class="allSc">
+		<p><input type="button" value="全てのチェックを外す" onclick="allDisCheck();"></p>
+		<div class="allSc">合計　<span id="result"></span></div>
+		<style type="text/css">.non-ads{display:none;}</style>
+	</body>
+	<footer>
+		<!-- <div class="allSc">
 		合計　<span id="result"></span>
-	</div>
+	</div> -->
 </footer>
 </html>
