@@ -207,7 +207,7 @@ function getSkillName(listKey){
 	for (var i = 0; i < arcArr.length; i++) {
 		arcList = eval(`arcData.${arcArr[i]}`);
 		lvList = getArcLv(lvArr[i]);
-		if (i-1 === arcArr.length) {
+		if (i === (arcArr.length - 1)) {
 			arctd += arcList[0] + lvList;
 		}else{
 			arctd += arcList[0] + lvList + "<br>";
