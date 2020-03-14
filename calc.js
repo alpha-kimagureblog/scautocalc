@@ -208,9 +208,9 @@ function getSkillName(listKey){
 		arcList = eval(`arcData.${arcArr[i]}`);
 		lvList = getArcLv(lvArr[i]);
 		if (i === arcArr.length) {
-			arctd += arcList + lvList;
+			arctd += arcList[0] + lvList;
 		}else{
-			arctd += arcList + lvList + "\r\n";
+			arctd += arcList[0] + lvList + "<br>";
 		}
 	}
 	var skillName = "<tr style=\"height: 18.75pt;\">\r\n"
