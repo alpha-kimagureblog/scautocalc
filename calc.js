@@ -16,8 +16,6 @@ const trtd2Sta = "<tr><td>";
 const trtd2mid = "</td><td>";
 // URLSTART1
 const urlStart = "<a href=\"";
-// URL(スキル用)
-const skillUrl = "\">";
 // URL(アーク用)
 const arcUrl = "\" target=\"_blank\">";
 // URLEND
@@ -54,8 +52,8 @@ function selectUnit(){
 		skillTable = [];
 		for (var index6 = 0; index6 < skNameList.length; index6++) {
 			unitList = trtd2Sta + "<strong>" + eval(`skillList.${skNameList[index6]}[0].skill`) + "</strong>" + trtdEnd
-								+ trtd2Sta + eval(`skillList.${skNameList[index6]}[0].eff`) + trtdEnd +
-								"<tr style=\"background-color: #e6e6e6;\"><td>";
+			+ trtd2Sta + eval(`skillList.${skNameList[index6]}[0].eff`) + trtdEnd +
+			"<tr style=\"background-color: #e6e6e6;\"><td>";
 			skillTable.push(unitList);
 		}
 		document.getElementById("skillTable").innerHTML = skillTable.join(trtdEnd);
@@ -71,11 +69,13 @@ function skillEnable(allData){
 	// スキル項目を元の色に戻す
 	for (var index1 = 0; index1 < allData.length; index1++) {
 		if (allData[index1].type == "checkbox") {
-			allData[index1].disabled = false;
-			tdid1 = eval(`allData[index1].name`);
-			tdid2 = eval(`allData[index1].name + "sub"`);
-			document.getElementById(eval(`tdid1`)).bgColor = "";
-			document.getElementById(eval(`tdid2`)).bgColor = "";
+			if (allData[index1].style[0] != "display") {
+				allData[index1].disabled = false;
+				tdid1 = eval(`allData[index1].name`);
+				tdid2 = eval(`allData[index1].name + "sub"`);
+				document.getElementById(eval(`tdid1`)).bgColor = "";
+				document.getElementById(eval(`tdid2`)).bgColor = "";
+			}
 		}
 	}
 }
@@ -100,25 +100,28 @@ function skillDisabled(allData,skNameList){
 }
 
 // チェックしたスキルを一覧に追加＆情報取得
-function calc(){
-	// リスト素材
-	// スキル名
-	var skill = "";
-	// 一覧用リスト
-	var selectList1 = [];
-	const sc = document.scCalc1;
-	for (let i = 0; i < sc.length; i++){
-		if(sc[i].checked){
-			// スキル情報を取得
-			skill = getSkill(sc[i].value);
-			// 一覧用リストに追加
-			selectList1.push(skill);
-		}
-	}
-	document.getElementById("checkList1").innerHTML = selectList1.join(trtdEnd);
-}
+// function calc(){
+// 	// リスト素材
+// 	// スキル名
+// 	var skill = "";
+// 	// 一覧用リスト
+// 	var selectList1 = [];
+// 	const sc = document.scCalc1;
+// 	for (let i = 0; i < sc.length; i++){
+// 		if(sc[i].checked){
+// 			if (sc[i].value != "on") {
+// 				// スキル情報を取得
+// 				skill = getSkill(sc[i].value);
+// 				// 一覧用リストに追加
+// 				selectList1.push(skill);
+// 			}
+// 		}
+// 	}
+// 	document.getElementById("checkList1").innerHTML = selectList1.join(trtdEnd);
+// 	document.getElementById("copyTarget").innerHTML = "";
+// }
 
-function calc2(){
+function calc(){
 	// リスト素材
 	// スキル名
 	var skill = "";
@@ -158,6 +161,7 @@ function calc2(){
 	document.getElementById("checkList2").innerHTML = selectList2.join(trtdEnd);
 	document.getElementById("copyList").textContent = copyList.join("\r\n");
 	document.getElementById("result").textContent = allSc;
+	document.getElementById("copyTarget").innerHTML = "";
 }
 
 // スキル名＆IDを取得
@@ -165,7 +169,7 @@ function getSkill2(listKey){
 	var idKey = eval(`skillList.${listKey}[0].id`);
 	var skillKey = eval(`skillList.${listKey}[0].skill`);
 	var scKey = eval(`skillList.${listKey}[0].sc`);
-	return urlStart + idKey + skillUrl + skillKey + urlEnd + newLine + scKey;
+	return skillKey + newLine + scKey;
 }
 
 // スキル名＆IDを取得2
@@ -194,22 +198,27 @@ function getArc(listKey){
 
 // スキル名(コピー用)を取得
 function getSkillName(listKey){
-	var myList = "";
-	var arc = "";
-	var url = "";
-	myList = "<tr><td>"
-	myList += eval(`skillList.${listKey}[0].skill`);
-	myList += "</td><td>"
-	myList += eval(`skillList.${listKey}[0].eff`);
-	myList += "</td><td>"
-	var arcValue = eval(`skillList.${listKey}[1].arc`);
-	for (var my = 0; my < arcValue.length; my++) {
-		arc += eval(`arcData.${arcValue[my]}[0]`);
-		// url = eval(`arcData.${arcValue[my]}[1]`);
-		myList += arc + newLine;
+	var skill = eval(`skillList.${listKey}[0].skill`);
+	var eff = eval(`skillList.${listKey}[0].eff`);
+	var arcArr = eval(`skillList.${listKey}[1]["arc"]`);
+	var lvArr = eval(`skillList.${listKey}[1]["lv"]`);
+	var arctd = "";
+
+	for (var i = 0; i < arcArr.length; i++) {
+		arcList = eval(`arcData.${arcArr[i]}`);
+		lvList = getArcLv(lvArr[i]);
+		if (i === arcArr.length) {
+			arctd += arcList + lvList;
+		}else{
+			arctd += arcList + lvList + "\r\n";
+		}
 	}
-	myList += "</td></tr>"
-	return myList;
+	skillName += "<tr style=\"height: 18.75pt;\">\r\n"
+	+ "<th style=\"height: 18.75pt; background-color: #d2eaf0;\" height=\"25\"><span style=\"font-size: 10pt;\">" + skill + "</span></th>\r\n"
+	+ "<td><span style=\"font-size: 10pt;\">" + eff + "</span></td>\r\n"
+	+ "<td><span style=\"font-size: 10pt;\">" + arctd + "</span></td>\r\n"
+	+ "</tr>\r\n";
+	return skillName;
 }
 
 // 選択したスキルのチェックを外す
@@ -230,6 +239,19 @@ function allDisCheck(){
 	document.getElementById("checkList1").innerHTML = "";
 	document.getElementById("checkList2").innerHTML = "";
 	document.getElementById("copyList").innerHTML = "";
+	document.getElementById("copyTarget").innerHTML = "";
+}
+
+// 選択したスキルをコピー
+function copyToClipboard() {
+	// コピー対象をJavaScript上で変数として定義する
+	var copyTarget = document.getElementById("copyList");
+	// コピー対象のテキストを選択する
+	copyTarget.select();
+	// 選択しているテキストをクリップボードにコピーする
+	document.execCommand("Copy");
+	// コピーをお知らせする
+	document.getElementById("copyTarget").innerHTML = "スキルをコピーしました！";
 }
 
 // ユニットのスキル情報を取得
@@ -287,6 +309,36 @@ function getUnitSkill(allData){
 		break;
 		case "uni017":
 		return  unitSkillList.uni017;
+		break;
+		case "uni018":
+		return  unitSkillList.uni018;
+		break;
+		case "uni019":
+		return  unitSkillList.uni019;
+		break;
+		case "uni020":
+		return  unitSkillList.uni020;
+		break;
+		case "uni021":
+		return  unitSkillList.uni021;
+		break;
+		case "uni022":
+		return  unitSkillList.uni022;
+		break;
+		case "uni023":
+		return  unitSkillList.uni023;
+		break;
+		case "uni024":
+		return  unitSkillList.uni024;
+		break;
+		case "uni025":
+		return  unitSkillList.uni025;
+		break;
+		case "uni026":
+		return  unitSkillList.uni026;
+		break;
+		case "uni027":
+		return  unitSkillList.uni027;
 		break;
 		case "uni028":
 		return  unitSkillList.uni028;
@@ -357,35 +409,8 @@ function getUnitSkill(allData){
 		case "uni050":
 		return  unitSkillList.uni050;
 		break;
-		case "uni018":
-		return  unitSkillList.uni018;
-		break;
-		case "uni019":
-		return  unitSkillList.uni019;
-		break;
-		case "uni020":
-		return  unitSkillList.uni020;
-		break;
-		case "uni021":
-		return  unitSkillList.uni021;
-		break;
-		case "uni022":
-		return  unitSkillList.uni022;
-		break;
-		case "uni023":
-		return  unitSkillList.uni023;
-		break;
-		case "uni024":
-		return  unitSkillList.uni024;
-		break;
-		case "uni025":
-		return  unitSkillList.uni025;
-		break;
-		case "uni026":
-		return  unitSkillList.uni026;
-		break;
-		case "uni027":
-		return  unitSkillList.uni027;
+		case "uni051":
+		return  unitSkillList.uni051;
 		break;
 		default:
 		return null;
@@ -531,6 +556,7 @@ const unitSkillList = {
 	,uni048 : ["sk378","sk113","sk233","sk234","sk115","sk103","sk278","sk253","sk169","sk170","sk199","sk248","sk324","sk252","sk376","sk334","sk004","sk034","sk067","sk040","sk041","sk333"]
 	,uni049 : ["sk102","sk243","sk275","sk339","sk258","sk316","sk348","sk260","sk266","sk267","sk241","sk071","sk072","sk092","sk070","sk095","sk333","sk361","sk352"]
 	,uni050 : ["sk360","sk285","sk381","sk212","sk246","sk133","sk265","sk292","sk258","sk266","sk347","sk263","sk273","sk336","sk382","sk353","sk024","sk038","sk333"]
+	,uni051 : ["sk125","sk127","sk272","sk320","sk126","sk383","sk284","sk111","sk099","sk388","sk389","sk321","sk379","sk390","sk391","sk031","sk013","sk392","sk333"]
 }
 
 // アーク一覧
@@ -614,7 +640,8 @@ const arcData = {
 	,"a077" : ["魔女が棲む家","https://altema.jp/lastcloudia/ark/13"]
 	,"a078" : ["魔獣たちの秘湯","https://altema.jp/lastcloudia/ark/15"]
 	,"a079" : ["クリスタルキャッスル","https://altema.jp/lastcloudia/ark/18"]
-	,"a080" : ["死霊の大軍勢","https://alpha-kimagureblog.xyz/lastcloudia/arc/large-army/"]
+	,"a080" : ["死霊の大軍勢","https://altema.jp/lastcloudia/ark/82"]
+	,"a081" : ["幻異門ユドレール","https://altema.jp/lastcloudia/ark/83"]
 }
 
 // スキル一覧
@@ -735,7 +762,7 @@ const skillList = {
 	,"sk114" : [{"id":"#sk114","skill":"魔力アップ3","sc":"SC:3","eff":"INTを8%アップする"},{"arc":["a006","a004"],"lv":[2,3]}]
 	,"sk115" : [{"id":"#sk115","skill":"魔力アップ極","sc":"SC:6","eff":"INTを15%アップする"},{"arc":["a055"],"lv":[10]}]
 	,"sk116" : [{"id":"#sk116","skill":"精神アップ","sc":"SC:1","eff":"MNDを2%アップする"},{"arc":["a072"],"lv":[1]}]
-	,"sk117" : [{"id":"#sk117","skill":"精神アップ2","sc":"SC:2","eff":"MNDを5%アップする"},{"arc":["a046"],"lv":[2]}]
+	,"sk117" : [{"id":"#sk117","skill":"精神アップ2","sc":"SC:2","eff":"MNDを5%アップする"},{"arc":["a046","a081"],"lv":[2,1]}]
 	,"sk118" : [{"id":"#sk118","skill":"精神アップ3","sc":"SC:3","eff":"MNDを8%アップする"},{"arc":["a018","a038"],"lv":[3,6]}]
 	,"sk119" : [{"id":"#sk119","skill":"精神アップ極","sc":"SC:6","eff":"MNDを15%アップする"},{"arc":["a072"],"lv":[10]}]
 	,"sk120" : [{"id":"#sk120","skill":"クリティカルアップ","sc":"SC:2","eff":"クリティカル発生率2%上昇"},{"arc":["a058"],"lv":[1]}]
@@ -893,7 +920,7 @@ const skillList = {
 	,"sk272" : [{"id":"#sk272","skill":"ブレイカー","sc":"SC:5","eff":"ブレイク値を増やす"},{"arc":["a005","a007"],"lv":[1,1]}]
 	,"sk273" : [{"id":"#sk273","skill":"死神","sc":"SC:7","eff":"物理攻撃時、確率で即死させる(ボス、アリーナは無効)"},{"arc":["a006"],"lv":[9]}]
 	,"sk274" : [{"id":"#sk274","skill":"急速回復","sc":"SC:4","eff":"状態異常回復の必要時間が軽減する"},{"arc":["a045","a038"],"lv":[7,5]}]
-	,"sk275" : [{"id":"#sk275","skill":"意識集中","sc":"SC:4","eff":"気絶時間が短くなる"},{"arc":["a079"],"lv":[7]}]
+	,"sk275" : [{"id":"#sk275","skill":"意識集中","sc":"SC:4","eff":"気絶時間が短くなる"},{"arc":["a079","a081"],"lv":[7,4]}]
 	,"sk276" : [{"id":"#sk276","skill":"リベンジブレイブ","sc":"SC:6","eff":"ダメージを受けたとき、確率でSTRが上がる"},{"arc":["a044"],"lv":[10]}]
 	,"sk277" : [{"id":"#sk277","skill":"リベンジオーラ","sc":"SC:6","eff":"ダメージを受けたとき、確率でINTが上がる"},{"arc":["a031"],"lv":[9]}]
 	,"sk278" : [{"id":"#sk278","skill":"高位魔法詠唱陣","sc":"SC:9","eff":"全ての魔法の詠唱速度がとても上がる"},{"arc":["a060","a036"],"lv":[8,6]}]
@@ -1001,4 +1028,14 @@ const skillList = {
 	,"sk380" : [{"id":"#sk380","skill":"暗黒剣","sc":"SC:-","eff":"剣装備時に闇属性物理攻撃の威力が40%アップ"},{"arc":[""],"lv":[]}]
 	,"sk381" : [{"id":"#sk381","skill":"攻撃アップⅣ","sc":"SC:-","eff":"STRを12%アップする"},{"arc":[""],"lv":[]}]
 	,"sk382" : [{"id":"#sk382","skill":"スカイハイ2","sc":"SC:-","eff":"空中にいる敵に対するダメージが30%アップ"},{"arc":[""],"lv":[]}]
-	}
+	,"sk383" : [{"id":"#sk383","skill":"槌ブースト","sc":"SC:-","eff":"槌装備時に物理攻撃の威力が7%アップしSTRが5%アップ"},{"arc":["a081"],"lv":[10]}]
+	,"sk384" : [{"id":"#sk384","skill":"HPアップ4","sc":"SC:4","eff":"HPを15%アップする"},{"arc":["a081"],"lv":[3]}]
+	,"sk385" : [{"id":"#sk385","skill":"ドラゴンシールド","sc":"SC:9","eff":"竜系タイプから受けるダメージ-10%"},{"arc":["a081"],"lv":[6]}]
+	,"sk386" : [{"id":"#sk386","skill":"ハイバイタリティ","sc":"SC:8","eff":"味方単体のHP上限を2000増やすと同時に回復"},{"arc":["a081"],"lv":[8]}]
+	,"sk387" : [{"id":"#sk387","skill":"槌ハイブースト","sc":"SC:9","eff":"槌装備時に物理攻撃の威力が25%アップしSTRが10%アップ"},{"arc":["a081"],"lv":[10]}]
+	,"sk388" : [{"id":"#sk388","skill":"通常攻撃ブースト","sc":"SC:-","eff":"通常攻撃の威力が20%アップ"},{"arc":[""],"lv":[]}]
+	,"sk389" : [{"id":"#sk389","skill":"ウィッチシールド","sc":"SC:-","eff":"ソーサラー系タイプから受けるダメージ-10%"},{"arc":[""],"lv":[]}]
+	,"sk390" : [{"id":"#sk390","skill":"樹アタックレイズ2","sc":"SC:-","eff":"樹属性攻撃の威力が30%アップ"},{"arc":[""],"lv":[]}]
+	,"sk391" : [{"id":"#sk391","skill":"デストロイヤー","sc":"SC:-","eff":"ブレイク値を大幅に増やす"},{"arc":[""],"lv":[]}]
+	,"sk392" : [{"id":"#sk392","skill":"エーテルヒール","sc":"SC:-","eff":"味方単体のHPを回復し、毒・暗闇・沈黙・呪い・病気・麻痺も回復"},{"arc":[""],"lv":[]}]
+}
