@@ -160,7 +160,7 @@ function calc(){
 	}
 	document.getElementById("checkList2").innerHTML = selectList2.join(trtdEnd);
 	document.getElementById("copyList").textContent = copyList.join("\r\n");
-	document.getElementById("result").textContent = allSc;
+	// document.getElementById("result").textContent = allSc;
 	document.getElementById("copyTarget").innerHTML = "";
 }
 
@@ -207,7 +207,7 @@ function getSkillName(listKey){
 	for (var i = 0; i < arcArr.length; i++) {
 		arcList = eval(`arcData.${arcArr[i]}`);
 		lvList = getArcLv(lvArr[i]);
-		if (i === arcArr.length) {
+		if (i-1 === arcArr.length) {
 			arctd += arcList[0] + lvList;
 		}else{
 			arctd += arcList[0] + lvList + "<br>";
