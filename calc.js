@@ -217,7 +217,7 @@ function getSkillName(listKey){
 	+ "<th style=\"height: 18.75pt; background-color: #d2eaf0;\" height=\"25\"><span style=\"font-size: 10pt;\">" + skill + "</span></th>\r\n"
 	+ "<td><span style=\"font-size: 10pt;\">" + eff + "</span></td>\r\n"
 	+ "<td><span style=\"font-size: 10pt;\">" + arctd + "</span></td>\r\n"
-	+ "</tr>\r\n";
+	+ "</tr>";
 	return skillName;
 }
 
