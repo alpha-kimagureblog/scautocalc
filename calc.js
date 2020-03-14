@@ -138,7 +138,7 @@ function calc(){
 	// コピー用リスト
 	var copyList = [];
 
-	const sc = document.scCalc2;
+	const sc = document.scCalc1;
 
 	for (let i = 0; i < sc.length; i++){
 		if(sc[i].checked){
