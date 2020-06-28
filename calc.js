@@ -119,8 +119,11 @@ function calc2(){
 	var skill = "";
 	// 取得可能アーク
 	var arc = "";
+	var arc2 = "";
 	// スキル名(コピー用)
 	var skillName = "";
+	// スキル名2(コピー用)
+	var skillName2 = "";
 	// スキルコスト合計
 	var allSc = 0;
 	// 一覧用リスト
@@ -128,6 +131,7 @@ function calc2(){
 	// ユニット選択リスト
 	var skillTable = [];
 	// コピー用リスト
+	var copyListAlpha = [];
 	var copyList = [];
 
 	var no = 0;
@@ -140,19 +144,24 @@ function calc2(){
 			skill = getSkill2(sc[i].value);
 			// アーク情報を取得
 			arc = getArc(sc[i].value);
+			arc2 = getArc2(sc[i].value);
 			// スキル名(コピー用)を取得
 			skillName = getSkillName(sc[i].value);
+			// スキル名2(コピー用)を取得
+			skillName2 = "■ " + eval(`skillList.${sc[i].value}[0].skill`) + "(" + eval(`skillList.${sc[i].value}[0].sc`) + ")" + "\r\n" + arc2;
 			// table用タグ生成
 			var checkList = trtd2Sta + skill + trtd2mid + arc + trtd2mid + chkSta + sc[i].value + chkEnd;
 			// // 一覧用リストに追加
 			selectList2.push(checkList);
 			// コピー用リストに追加
-			copyList.push(skillName);
+			copyListAlpha.push(skillName);
+			copyList.push(skillName2);
 			// 合計値を追加
 			allSc += getSc(sc[i].value);
 		}
 	}
 	document.getElementById("checkList2").innerHTML = selectList2.join(trtdEnd);
+	document.getElementById("copyListAlpha").textContent = copyListAlpha.join("\r\n");
 	document.getElementById("copyList").textContent = copyList.join("\r\n");
 	document.getElementById("result").textContent = allSc;
 }
@@ -185,6 +194,22 @@ function getArc(listKey){
 		arcList = eval(`arcData.${arcArr[i]}`);
 		lvList = getArcLv(lvArr[i]);
 		urlList += urlStart + arcList[1] + arcUrl + arcList[0] + lvList + urlEnd + newLine;
+	}
+	return urlList;
+}
+
+// アーク情報の取得2
+function getArc2(listKey){
+	var urlList = "";
+	var arcList = "";
+	var lvList = "";
+	var arcArr = eval(`skillList.${listKey}[1]["arc"]`);
+	var lvArr = eval(`skillList.${listKey}[1]["lv"]`);
+
+	for (var i = 0; i < arcArr.length; i++) {
+		arcList = eval(`arcData.${arcArr[i]}`);
+		lvList = getArcLv(lvArr[i]);
+		urlList += arcList[0] + lvList + "\r\n" ;
 	}
 	return urlList;
 }
@@ -298,6 +323,7 @@ function allDisCheck(){
 	document.getElementById("result").textContent = 0;
 	document.getElementById("checkList1").innerHTML = "";
 	document.getElementById("checkList2").innerHTML = "";
+	document.getElementById("copyListAlpha").innerHTML = "";
 	document.getElementById("copyList").innerHTML = "";
 }
 
