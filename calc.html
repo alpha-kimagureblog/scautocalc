@@ -60,6 +60,7 @@
 			<option value="uni057">ベイランド</option>
 			<option value="uni058">ロギア</option>
 			<option value="uni059">リムル=テンペスト</option>
+			<option value="uni060">ミリム</option>
 			<option value="uni018">ガウル</option>
 			<option value="uni019">ゴブル</option>
 			<option value="uni020">ホブゴブル</option>
@@ -389,11 +390,11 @@
 				</tr>
 				<tr id="sk276"><td style="font-weight: 900;">リベンジブレイブ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" id="unisk276" value="sk276" onClick="calc()"/></td></tr><tr id="sk276sub"><td colspan="2">ダメージを受けたとき、確率でSTRが上がる</td></tr>
 				<tr id="sk277"><td style="font-weight: 900;">リベンジオーラ</td><td>SC:6</td><td rowspan="2"><input type="checkbox" id="unisk277" value="sk277" onClick="calc()"/></td></tr><tr id="sk277sub"><td colspan="2">ダメージを受けたとき、確率でINTが上がる</td></tr>
-				<tr id="sk319"><td style="font-weight: 900;">リーンフォース</td><td>SC:-</td><td rowspan="2"><input type="checkbox" id="unisk319" value="sk319" onClick="calc()"/></td></tr><tr id="sk319sub"><td colspan="2">超必殺ゲージが最大まで溜まった状態でINTが30%アップ</td></tr>
+				<tr id="sk319"><td style="font-weight: 900;">リーンフォース</td><td>SC:5</td><td rowspan="2"><input type="checkbox" id="unisk319" value="sk319" onClick="calc()"/></td></tr><tr id="sk319sub"><td colspan="2">超必殺ゲージが最大まで溜まった状態でINTが30%アップ</td></tr>
 				<tr id="sk210"><td style="font-weight: 900;">飛影</td><td>SC:4</td><td rowspan="2"><input type="checkbox" id="unisk210" value="sk210" onClick="calc()"/></td></tr><tr id="sk210sub"><td colspan="2">HPが最大のときに移動速度が上がる</td></tr>
 				<tr id="sk327"><td style="font-weight: 900;">覚醒</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk327" value="sk327" onClick="calc()"/></td></tr><tr id="sk327sub"><td colspan="2">瀕死時にHPが回復してSTR・DEF・MND・移動速度が上がる（一回限定）</td></tr>
 				<tr id="sk331"><td style="font-weight: 900;">黄泉の理</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk331" value="sk331" onClick="calc()"/></td></tr><tr id="sk331sub"><td colspan="2">蘇生時にSTR・INTが30%アップ<br>クリティカル発生率が15%アップ</td></tr>
-				<tr id="sk395"><td style="font-weight: 900;">魔獣同盟</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk395" value="sk395" onClick="calc()"></td></tr><tr id="sk395sub"><td colspan="2">瀕死時にHPが回復してSTR・DEF・MND・移動速度が上がる（一回限定）</td></tr>
+				<tr id="sk395"><td style="font-weight: 900;">魔獣同盟</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk395" value="sk395" onClick="calc()"></td></tr><tr id="sk395sub"><td colspan="2">スキルに「魔獣同盟」をセットしている味方ユニットが2体以上で、STR・DEF・INT・MNDが上昇（2体:5%、3体:10%、4体:15%）</td></tr>
 				<tr id="sk336"><td style="font-weight: 900;">ライフブレイブ</td><td>SC:8</td><td rowspan="2"><input type="checkbox" id="unisk336" value="sk336" onClick="calc()"/></td></tr><tr id="sk336sub"><td colspan="2">自身の残りHPが少ないほどSTRがアップ(最大+50%)</td></tr>
 			</tbody>
 		</table>
@@ -570,12 +571,12 @@
 				<tr id="sk221"><td style="font-weight: 900;">闇ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" id="unisk221" value="sk221" onClick="calc()"/></td></tr><tr id="sk221sub"><td colspan="2">闇属性魔法攻撃の威力が10%アップ</td></tr>
 				<tr id="sk228"><td style="font-weight: 900;">闇ハイブースト</td><td>SC:8</td><td rowspan="2"><input type="checkbox" id="unisk228" value="sk228" onClick="calc()"/></td></tr><tr id="sk228sub"><td colspan="2">闇属性魔法攻撃の威力が30%アップ</td></tr>
 				<tr id="sk312"><td style="font-weight: 900;">槍ブースト</td><td>SC:4</td><td rowspan="2"><input type="checkbox" id="unisk312" value="sk312" onClick="calc()"/></td></tr><tr id="sk312sub"><td colspan="2">槍装備時に物理攻撃の威力が5%アップし、受ける物理ダメージ-5%</td></tr>
-				<tr id="sk324"><td style="font-weight: 900;">ローブハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk324" value="sk324" onClick="calc()"/></td></tr><tr id="sk324sub"><td colspan="2">ローブ装備時にMNDが20%アップし、魔法攻撃の威力が20%アップ</td></tr>
+				<tr id="sk324"><td style="font-weight: 900;">ローブハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk324" value="sk324" onClick="calc()"/></td></tr><tr id="sk324sub"><td colspan="2">ローブ装備時にMNDが20%アップし、魔法攻撃の威力が10%アップ</td></tr>
 				<tr id="sk326"><td style="font-weight: 900;">服ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk326" value="sk326" onClick="calc()"/></td></tr><tr id="sk326sub"><td colspan="2">服装備時にDEFとMNDが10%アップし、物理攻撃ダメージが10%アップ</td></tr>
 				<tr id="sk387"><td style="font-weight: 900;">槌ハイブースト</td><td>SC:6</td><td rowspan="2"><input type="checkbox" id="unisk387" value="sk387" onClick="calc()"></td></tr><tr id="sk387sub"><td colspan="2">槌装備時に物理攻撃の威力が25%アップしSTRが10%アップ</td></tr>
 				<tr id="sk468"><td style="font-weight: 900;">槍ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk468" value="sk468" onClick="calc()"/></td></tr><tr id="sk468sub"><td colspan="2">槍装備時に物理攻撃の威力が15%アップし、受ける物理ダメージ-15%</td></tr>
 				<tr id="sk286"><td style="font-weight: 900;">特攻ブースト</td><td>SC:6</td><td rowspan="2"><input type="checkbox" id="unisk286" value="sk286" onClick="calc()"/></td></tr><tr id="sk286sub"><td colspan="2">特攻発生時、威力が50%アップ</td></tr>
-				<tr id="sk431"><td style="font-weight: 900;">ブレイクブースト</td><td>SC:7</td><td rowspan="2"><input type="checkbox" id="unisk431" value="sk431" onClick="calc()"/></td></tr><tr id="sk431sub"><td colspan="2">特攻発生時、威力が50%アップ</td></tr>
+				<tr id="sk431"><td style="font-weight: 900;">ブレイクブースト</td><td>SC:7</td><td rowspan="2"><input type="checkbox" id="unisk431" value="sk431" onClick="calc()"/></td></tr><tr id="sk431sub"><td colspan="2">ブレイク状態の敵に対する物理攻撃のダメージ+30%</td></tr>
 			</tbody>
 		</table>
 
@@ -702,6 +703,7 @@
 				<tr id="sk385"><td style="font-weight: 900;">ドラゴンシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk385" value="sk385" onClick="calc()"></td></tr><tr id="sk385sub"><td colspan="2">竜系タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk475"><td style="font-weight: 900;">ビーストシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk475" value="sk475" onClick="calc()"/></td></tr><tr id="sk475sub"><td colspan="2">獣タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk477"><td style="font-weight: 900;">闇シールド</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk477" value="sk477" onClick="calc()"/></td></tr><tr id="sk477sub"><td colspan="2">敵から受ける闇属性攻撃の被ダメージ-20%</td></tr>
+				<tr id="sk480"><td style="font-weight: 900;">炎属性シールド</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk480" value="sk480" onClick="calc()"/></td></tr><tr id="sk480sub"><td colspan="2">敵から受ける炎属性攻撃の被ダメージ-20%</td></tr>
 				<tr id="sk430"><td style="font-weight: 900;">無属性シールド</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk430" value="sk430" onClick="calc()"/></td></tr><tr id="sk430sub"><td colspan="2">敵から受ける無属性攻撃の被ダメージ-20%</td></tr>
 				<tr id="sk309"><td style="font-weight: 900;">天塊</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk309" value="sk309" onClick="calc()"/></td></tr><tr id="sk309sub"><td colspan="2">物理ダメージを受けた時、MPを3消費して受けるダメージを半減</td></tr>
 				<tr id="sk132"><td style="font-weight: 900;">ロイヤルアーマー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" id="unisk132" value="sk132" onClick="calc()"/></td></tr><tr id="sk132sub"><td colspan="2">クリティカル攻撃を受ける確率を減少させる</td></tr>
@@ -827,6 +829,8 @@
 				</tr>
 				<tr id="sk478"><td style="font-weight: 900;">名前をつける</td><td>SC:7</td><td rowspan="2"><input type="checkbox" id="unisk478" value="sk478" onClick="calc()"/></td></tr><tr id="sk478sub"><td colspan="2">自分のHPを半分消費し、味方単体のSTR・DEF・INT・MND 10%アップ<br>(自身には効果なし)</td></tr>
 				<tr id="sk479"><td style="font-weight: 900;">暴風竜の加護</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk479" value="sk479" onClick="calc()"/></td></tr><tr id="sk479sub"><td colspan="2">タイプに竜を追加し、STRを10%アップ<br>物理攻撃の被ダメージ-15%</td></tr>
+				<tr id="sk481"><td style="font-weight: 900;">極炎獄霊覇</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk481" value="sk481" onClick="calc()"/></td></tr><tr id="sk481sub"><td colspan="2">中範囲の敵に炎属性の強力な攻撃</td></tr>
+				<tr id="sk482"><td style="font-weight: 900;">漫依(イフリート)</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk482" value="sk482" onClick="calc()"/></td></tr><tr id="sk482sub"><td colspan="2">常にHPが減るが、物理ダメージ+20%、炎属性攻撃の被ダメージ-20%</td></tr>
 			</tbody>
 		</table>
 	</form>
