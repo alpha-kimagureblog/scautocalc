@@ -129,6 +129,7 @@
 				<tr id="sk100"><td style="font-weight: 900;">MPアップ</td><td>SC:1</td><td rowspan="2"><input type="checkbox" name="magicSkill" id="unisk100" value="sk100" onClick="calc()"/></td></tr><tr id="sk100sub"><td colspan="2">MPを5%アップする</td></tr>
 				<tr id="sk101"><td style="font-weight: 900;">MPアップ2</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="magicSkill" id="unisk101" value="sk101" onClick="calc()"/></td></tr><tr id="sk101sub"><td colspan="2">MPを8%アップする</td></tr>
 				<tr id="sk102"><td style="font-weight: 900;">MPアップ3</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="magicSkill" id="unisk102" value="sk102" onClick="calc()"/></td></tr><tr id="sk102sub"><td colspan="2">MPを12%アップする</td></tr>
+				<tr id="sk339"><td style="font-weight: 900;">MPアップ4</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="magicSkill" id="unisk339" value="sk339" onClick="calc()"/></td></tr><tr id="sk339sub"><td colspan="2">MPを15%アップする</td></tr>
 				<tr id="sk103"><td style="font-weight: 900;">MPアップ極</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="magicSkill" id="unisk103" value="sk103" onClick="calc()"/></td></tr><tr id="sk103sub"><td colspan="2">MPを20%アップする</td></tr>
 				<tr id="sk205"><td style="font-weight: 900;">感応</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="magicSkill" id="unisk205" value="sk205" onClick="calc()"/></td></tr><tr id="sk205sub"><td colspan="2">瀕死時にINTが上がる</td></tr>
 				<tr id="sk209"><td style="font-weight: 900;">月光</td><td>SC:4</td><td rowspan="2"><input type="checkbox" name="magicSkill" id="unisk209" value="sk209" onClick="calc()"/></td></tr><tr id="sk209sub"><td colspan="2">HPが最大のときにINTが上がる</td></tr>
@@ -207,6 +208,7 @@
 				<tr id="sk198"><td style="font-weight: 900;">オートプロテクション</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="tankSkill" id="unisk198" value="sk198" onClick="calc()"/></td></tr><tr id="sk198sub"><td colspan="2">常にプロテクションの効果(物理ダメージ減少)</td></tr>
 				<tr id="sk196"><td style="font-weight: 900;">ファストバリア</td><td>SC:2</td><td rowspan="2"><input type="checkbox" name="tankSkill" id="unisk196" value="sk196" onClick="calc()"/></td></tr><tr id="sk196sub"><td colspan="2">戦闘開始時に自動バリア発動</td></tr>
 				<tr id="sk200"><td style="font-weight: 900;">オートバリア</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="tankSkill" id="unisk200" value="sk200" onClick="calc()"/></td></tr><tr id="sk200sub"><td colspan="2">常にマジックバリアの効果(魔法ダメージ減少)</td></tr>
+				<tr id="sk491"><td style="font-weight: 900;">オートメティス</td><td>SC:7</td><td rowspan="2"><input type="checkbox" name="tankSkill" id="unisk491" value="sk491" onClick="calc()"/></td></tr><tr id="sk491sub"><td colspan="2">常に魔法「メティス」の効果が掛かった状態になる</td></tr>
 				<tr id="sk201"><td style="font-weight: 900;">オートリジェネ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" name="tankSkill" id="unisk201" value="sk201" onClick="calc()"/></td></tr><tr id="sk201sub"><td colspan="2">常にリジェネの効果(HPを徐々に回復)</td></tr>
 				<tr id="sk222"><td style="font-weight: 900;">回復ブースト</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="tankSkill" id="unisk222" value="sk222" onClick="calc()"/></td></tr><tr id="sk222sub"><td colspan="2">回復魔法の威力10%アップ</td></tr>
 			</tbody>
@@ -528,6 +530,7 @@
 				<tr id="sk186"><td style="font-weight: 900;">麻痺耐性</td><td>SC:5</td><td rowspan="2"><input type="checkbox" id="unisk186" value="sk186" onClick="calc()"/></td></tr><tr id="sk186sub"><td colspan="2">麻痺がかかりにくくなる(麻痺が弱点の場合は弱点を消す)</td></tr>
 				<tr id="sk192"><td style="font-weight: 900;">麻痺無効</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk192" value="sk192" onClick="calc()"/></td></tr><tr id="sk192sub"><td colspan="2">麻痺を無効化する(麻痺が弱点の場合は麻痺耐性になる)</td></tr>
 				<tr id="sk187"><td style="font-weight: 900;">病気耐性</td><td>SC:5</td><td rowspan="2"><input type="checkbox" id="unisk187" value="sk187" onClick="calc()"/></td></tr><tr id="sk187sub"><td colspan="2">病気にかかりにくくなる(病気が弱点の場合は弱点を消す)</td></tr>
+				<tr id="sk489"><td style="font-weight: 900;">気絶耐性</td><td>SC:6</td><td rowspan="2"><input type="checkbox" id="unisk489" value="sk489" onClick="calc()"/></td></tr><tr id="sk489sub"><td colspan="2">気絶しづらくなる</td></tr>
 			</tbody>
 		</table>
 
@@ -702,8 +705,10 @@
 				<tr id="sk323"><td style="font-weight: 900;">アンデッドシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk323" value="sk323" onClick="calc()"/></td></tr><tr id="sk323sub"><td colspan="2">不死生物系タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk385"><td style="font-weight: 900;">ドラゴンシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk385" value="sk385" onClick="calc()"></td></tr><tr id="sk385sub"><td colspan="2">竜系タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk475"><td style="font-weight: 900;">ビーストシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk475" value="sk475" onClick="calc()"/></td></tr><tr id="sk475sub"><td colspan="2">獣タイプから受けるダメージ-10%</td></tr>
+				<tr id="sk488"><td style="font-weight: 900;">スピリットシールド</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk488" value="sk488" onClick="calc()"/></td></tr><tr id="sk488sub"><td colspan="2">精霊系タイプから受けるダメージ-10%</td></tr>
 				<tr id="sk477"><td style="font-weight: 900;">闇シールド</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk477" value="sk477" onClick="calc()"/></td></tr><tr id="sk477sub"><td colspan="2">敵から受ける闇属性攻撃の被ダメージ-20%</td></tr>
 				<tr id="sk480"><td style="font-weight: 900;">炎属性シールド</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk480" value="sk480" onClick="calc()"/></td></tr><tr id="sk480sub"><td colspan="2">敵から受ける炎属性攻撃の被ダメージ-20%</td></tr>
+				<tr id="sk490"><td style="font-weight: 900;">樹属性シールド</td><td>SC:10</td><td rowspan="2"><input type="checkbox" id="unisk490" value="sk490" onClick="calc()"/></td></tr><tr id="sk490sub"><td colspan="2">敵から受ける樹属性攻撃の被ダメージ-20%</td></tr>
 				<tr id="sk430"><td style="font-weight: 900;">無属性シールド</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk430" value="sk430" onClick="calc()"/></td></tr><tr id="sk430sub"><td colspan="2">敵から受ける無属性攻撃の被ダメージ-20%</td></tr>
 				<tr id="sk309"><td style="font-weight: 900;">天塊</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk309" value="sk309" onClick="calc()"/></td></tr><tr id="sk309sub"><td colspan="2">物理ダメージを受けた時、MPを3消費して受けるダメージを半減</td></tr>
 				<tr id="sk132"><td style="font-weight: 900;">ロイヤルアーマー</td><td>SC:8</td><td rowspan="2"><input type="checkbox" id="unisk132" value="sk132" onClick="calc()"/></td></tr><tr id="sk132sub"><td colspan="2">クリティカル攻撃を受ける確率を減少させる</td></tr>
