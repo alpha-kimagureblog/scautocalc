@@ -61,6 +61,8 @@
 			<option value="uni058">ロギア</option>
 			<option value="uni059">リムル=テンペスト</option>
 			<option value="uni060">ミリム</option>
+			<option value="uni061">水着ティンキリ</option>
+			<option value="uni062">ラグロボス</option>
 			<option value="uni018">ガウル</option>
 			<option value="uni019">ゴブル</option>
 			<option value="uni020">ホブゴブル</option>
@@ -108,6 +110,7 @@
 				<tr id="sk287"><td style="font-weight: 900;">チャージ特技2</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="physicSkill" id="unisk287" value="sk287" onClick="calc()"/></td></tr><tr id="sk287sub"><td colspan="2">バトル開始時に2番目の特技(右上に位置する特技)を一定量回復</td></tr>
 				<tr id="sk322"><td style="font-weight: 900;">チャージ特技3</td><td>SC:3</td><td rowspan="2"><input type="checkbox" name="physicSkill" id="unisk322" value="sk322" onClick="calc()"/></td></tr><tr id="sk322sub"><td colspan="2">戦闘開始時に3番目の特技のSCTを一定量回復</td></tr>
 				<tr id="sk316"><td style="font-weight: 900;">クイックトリガー</td><td>SC:6</td><td rowspan="2"><input type="checkbox" name="physicSkill" id="unisk316" value="sk316" onClick="calc()"/></td></tr><tr id="sk316sub"><td colspan="2">バトル開始時に、特技のどれかがランダムで1回分回復する</td></tr>
+				<tr id="sk368"><td style="font-weight: 900;">コンボマスター</td><td>SC:9</td><td rowspan="2"><input type="checkbox" name="physicSkill" id="unisk368" value="sk368" onClick="calc()"/></td></tr><tr id="sk368sub"><td colspan="2">連続コンボ中の威力が上がる</td></tr>
 			</tbody>
 		</table>
 
@@ -412,6 +415,7 @@
 					<th style="width: 5%;"></th>
 				</tr>
 				<tr id="sk165"><td style="font-weight: 900;">炎アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk165" value="sk165" onClick="calc()"/></td></tr><tr id="sk165sub"><td colspan="2">炎属性攻撃の威力が20%アップ</td></tr>
+				<tr id="sk494"><td style="font-weight: 900;">炎アタックレイズ2</td><td>SC:15</td><td rowspan="2"><input type="checkbox" id="unisk494" value="sk494" onClick="calc()"/></td></tr><tr id="sk494sub"><td colspan="2">炎属性攻撃の威力が30％アップ</td></tr>
 				<tr id="sk166"><td style="font-weight: 900;">氷アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk166" value="sk166" onClick="calc()"/></td></tr><tr id="sk166sub"><td colspan="2">氷属性攻撃の威力が20%アップ</td></tr>
 				<tr id="sk167"><td style="font-weight: 900;">樹アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk167" value="sk167" onClick="calc()"/></td></tr><tr id="sk167sub"><td colspan="2">樹属性攻撃の威力が20%アップ</td></tr>
 				<tr id="sk168"><td style="font-weight: 900;">雷アタックレイズ</td><td>SC:11</td><td rowspan="2"><input type="checkbox" id="unisk168" value="sk168" onClick="calc()"/></td></tr><tr id="sk168sub"><td colspan="2">雷属性攻撃の威力が20%アップ</td></tr>
@@ -554,6 +558,7 @@
 				<tr id="sk492"><td style="font-weight: 900;">ファストバイタリティ</td><td>SC:3</td><td rowspan="2"><input type="checkbox" id="unisk492" value="sk492" onClick="calc()"/></td></tr><tr id="sk492sub"><td colspan="2">戦闘開始時にバイタリティを自動で発動</td></tr>
 				<tr id="sk294"><td style="font-weight: 900;">ファストアイスウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" id="unisk294" value="sk294" onClick="calc()"/></td></tr><tr id="sk294sub"><td colspan="2">戦闘開始時にアイスウォールを自動で発動</td></tr>
 				<tr id="sk310"><td style="font-weight: 900;">ファストホーリーウォール</td><td>SC:5</td><td rowspan="2"><input type="checkbox" id="unisk310" value="sk310" onClick="calc()"/></td></tr><tr id="sk310sub"><td colspan="2">戦闘開始時にホーリーウォールを自動で発動</td></tr>
+				<tr id="sk493"><td style="font-weight: 900;">ファストヘイスト</td><td>SC:5</td><td rowspan="2"><input type="checkbox" id="unisk493" value="sk493" onClick="calc()"/></td></tr><tr id="sk493sub"><td colspan="2">戦闘開始時にヘイストを自動で発動</td></tr>
 				<tr id="sk202"><td style="font-weight: 900;">オートヘイスト</td><td>SC:14</td><td rowspan="2"><input type="checkbox" id="unisk202" value="sk202" onClick="calc()"/></td></tr><tr id="sk202sub"><td colspan="2">常にヘイストの効果(味方１体のスキル回復速度アップ)</td></tr>
 			</tbody>
 		</table>
@@ -583,6 +588,7 @@
 				<tr id="sk326"><td style="font-weight: 900;">服ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk326" value="sk326" onClick="calc()"/></td></tr><tr id="sk326sub"><td colspan="2">服装備時にDEFとMNDが10%アップし、物理攻撃ダメージが10%アップ</td></tr>
 				<tr id="sk387"><td style="font-weight: 900;">槌ハイブースト</td><td>SC:6</td><td rowspan="2"><input type="checkbox" id="unisk387" value="sk387" onClick="calc()"></td></tr><tr id="sk387sub"><td colspan="2">槌装備時に物理攻撃の威力が25%アップしSTRが10%アップ</td></tr>
 				<tr id="sk468"><td style="font-weight: 900;">槍ハイブースト</td><td>SC:9</td><td rowspan="2"><input type="checkbox" id="unisk468" value="sk468" onClick="calc()"/></td></tr><tr id="sk468sub"><td colspan="2">槍装備時に物理攻撃の威力が15%アップし、受ける物理ダメージ-15%</td></tr>
+				<tr id="sk492"><td style="font-weight: 900;">杖ブースト</td><td>SC:4</td><td rowspan="2"><input type="checkbox" id="unisk492" value="sk492" onClick="calc()"/></td></tr><tr id="sk492sub"><td colspan="2">杖装備時に魔法攻撃の威力が10％アップ</td></tr>
 				<tr id="sk286"><td style="font-weight: 900;">特攻ブースト</td><td>SC:6</td><td rowspan="2"><input type="checkbox" id="unisk286" value="sk286" onClick="calc()"/></td></tr><tr id="sk286sub"><td colspan="2">特攻発生時、威力が50%アップ</td></tr>
 				<tr id="sk431"><td style="font-weight: 900;">ブレイクブースト</td><td>SC:7</td><td rowspan="2"><input type="checkbox" id="unisk431" value="sk431" onClick="calc()"/></td></tr><tr id="sk431sub"><td colspan="2">ブレイク状態の敵に対する物理攻撃のダメージ+30%</td></tr>
 			</tbody>
