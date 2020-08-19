@@ -770,7 +770,6 @@ const arcData = {
 	,"a089" : ["爆炎の支配者(SSR)","https://alpha-kimagureblog.xyz/lastcloudia/arc/"]
 	,"a090" : ["砂漠の音楽隊(SSR)","https://alpha-kimagureblog.xyz/lastcloudia/arc/"]
 	,"a091" : ["ガリアーノ大瀑布(SSR)","https://alpha-kimagureblog.xyz/lastcloudia/arc/"]
-	,"a091" : ["ガリアーノ大瀑布(SSR)","https://alpha-kimagureblog.xyz/lastcloudia/arc/"]
 	,"a092" : ["破神大戦(UR)","https://alpha-kimagureblog.xyz/lastcloudia/arc/"]
 }
 
