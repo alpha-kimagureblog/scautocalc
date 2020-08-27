@@ -7,8 +7,10 @@
 	<script src="calc.js"></script>
 </head>
 <body>
+	<h1>スキルコスト自動計算機</h1>
 	<form name="scCalc1">
-		<h2>ユニット選択</h2>
+		<h2>①ユニット選択</h2>
+		<p>スキルを習得させるユニットを選択してください</p>
 		<select name="unit" onChange="selectUnit();">
 			<option>---ユニットを選択---</option>
 			<option value="uni001">カイル</option>
@@ -74,10 +76,13 @@
 			<option value="uni026">ヴァザード</option>
 			<option value="uni027">DXR-MK02</option>
 		</select>
+		<p>(※能力開放で習得できるスキルはグレーアウトで選択不可になります)</p>
 		<br>
-		<br>
-		<br>
-		<h2>物理必須スキル</h2>
+		<h2>②スキル一覧</h2>
+		<p>習得させたいスキルを一通りチェックしてください。</p>
+		<p>※1 不要なものは後々付け外しできます</p>
+		<p>※2 全て選択をチェックすると項目内のスキルを全てチェックすることができます</p>
+		<h3>物理必須スキル</h3>
 		<label>
 			<input type="checkbox" id="physic" name="allCheck" onClick="allChecked();" />全て選択
 		</label>
@@ -114,7 +119,7 @@
 			</tbody>
 		</table>
 
-		<h2>魔法必須スキル</h2>
+		<h3>魔法必須スキル</h3>
 		<label>
 			<input type="checkbox" id="magic" name="allCheck" onClick="allChecked();" />全て選択
 		</label>
@@ -146,7 +151,7 @@
 			</tbody>
 		</table>
 
-		<h2>物理魔法共通</h2>
+		<h3>物理魔法共通</h3>
 		<label>
 			<input type="checkbox" id="common" name="allCheck" onClick="allChecked();" />全て選択
 		</label>
@@ -170,7 +175,7 @@
 			</tbody>
 		</table>
 
-		<h2>タンク・サポーター必須スキル</h2>
+		<h3>タンク・サポーター必須スキル</h3>
 		<label>
 			<input type="checkbox" id="tank" name="allCheck" onClick="allChecked();" />全て選択
 		</label>
@@ -218,7 +223,7 @@
 			</tbody>
 		</table>
 
-		<h2>HP回復魔法</h2>
+		<h3>HP回復魔法</h3>
 		<!-- <input type="checkbox" name="test" value="sk001" onClick="calc()"/> -->
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
@@ -238,7 +243,7 @@
 			</tbody>
 		</table>
 
-		<h2>状態異常回復魔法</h2>
+		<h3>状態異常回復魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -262,7 +267,7 @@
 			</tbody>
 		</table>
 
-		<h2>戦闘不能回復魔法</h2>
+		<h3>戦闘不能回復魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -274,7 +279,7 @@
 			</tbody>
 		</table>
 
-		<h2>攻撃魔法</h2>
+		<h3>攻撃魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -306,7 +311,7 @@
 			</tbody>
 		</table>
 
-		<h2>状態異常魔法</h2>
+		<h3>状態異常魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -324,7 +329,7 @@
 			</tbody>
 		</table>
 
-		<h2>バフ魔法</h2>
+		<h3>バフ魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -364,7 +369,7 @@
 			</tbody>
 		</table>
 
-		<h2>デバフ魔法</h2>
+		<h3>デバフ魔法</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -387,7 +392,7 @@
 			</tbody>
 		</table>
 
-		<h2>ステータスアップ</h2>
+		<h3>ステータスアップ</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -406,7 +411,7 @@
 			</tbody>
 		</table>
 
-		<h2>ダメージアップ</h2>
+		<h3>ダメージアップ</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -429,7 +434,7 @@
 			</tbody>
 		</table>
 
-		<h2>キラー/スレイヤー</h2>
+		<h3>キラー/スレイヤー</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -472,7 +477,7 @@
 			</tbody>
 		</table>
 
-		<h2>ガード</h2>
+		<h3>ガード</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -484,7 +489,7 @@
 			</tbody>
 		</table>
 
-		<h2>ブレイク</h2>
+		<h3>ブレイク</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -496,7 +501,7 @@
 			</tbody>
 		</table>
 
-		<h2>装備</h2>
+		<h3>装備</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -518,7 +523,7 @@
 			</tbody>
 		</table>
 
-		<h2>耐性/無効</h2>
+		<h3>耐性/無効</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -542,7 +547,7 @@
 			</tbody>
 		</table>
 
-		<h2>ファスト/オート</h2>
+		<h3>ファスト/オート</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -563,7 +568,7 @@
 			</tbody>
 		</table>
 
-		<h2>ブースト</h2>
+		<h3>ブースト</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -594,7 +599,7 @@
 			</tbody>
 		</table>
 
-		<h2>状態異常付与</h2>
+		<h3>状態異常付与</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -610,7 +615,7 @@
 			</tbody>
 		</table>
 
-		<h2>HP回復</h2>
+		<h3>HP回復</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -627,7 +632,7 @@
 			</tbody>
 		</table>
 
-		<h2>MP回復</h2>
+		<h3>MP回復</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -641,7 +646,7 @@
 			</tbody>
 		</table>
 
-		<h2>SCT増加</h2>
+		<h3>SCT増加</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -657,7 +662,7 @@
 			</tbody>
 		</table>
 
-		<h2>移動速度</h2>
+		<h3>移動速度</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -671,7 +676,7 @@
 			</tbody>
 		</table>
 
-		<h2>追加攻撃</h2>
+		<h3>追加攻撃</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -687,7 +692,7 @@
 			</tbody>
 		</table>
 
-		<h2>擬態</h2>
+		<h3>擬態</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -703,7 +708,7 @@
 			</tbody>
 		</table>
 
-		<h2>ダメージ軽減</h2>
+		<h3>ダメージ軽減</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -726,7 +731,7 @@
 			</tbody>
 		</table>
 
-		<h2>魔法系技能</h2>
+		<h3>魔法系技能</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -739,7 +744,7 @@
 			</tbody>
 		</table>
 
-		<h2>魔法クリティカル</h2>
+		<h3>魔法クリティカル</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -756,7 +761,7 @@
 			</tbody>
 		</table>
 
-		<h2>その他</h2>
+		<h3>その他</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -778,7 +783,7 @@
 			</tbody>
 		</table>
 
-		<h2>聖剣伝説</h2>
+		<h3>聖剣伝説</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -807,7 +812,7 @@
 			</tbody>
 		</table>
 
-		<h2>Dr.STONE</h2>
+		<h3>Dr.STONE</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -836,7 +841,7 @@
 			</tbody>
 		</table>
 
-		<h2>転スラ</h2>
+		<h3>転スラ</h3>
 		<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 			<tbody>
 				<tr style="background-color: #e6e6e6;">
@@ -853,7 +858,8 @@
 	</form>
 
 	<form name="scCalc2">
-		<h2>選択スキル一覧</h2>
+		<h2>③選択スキル一覧</h2>
+		<p>まずは全て選択でスキルを全て選択し④へ進みましょう。</p>
 		<label>
 			<input type="checkbox" name="allCheck" onClick="allChecked2();" />全て選択
 		</label>
@@ -881,10 +887,14 @@
 		<tbody id="skillTable">
 		</tbody>
 	</table>
-	<p>【あるふぁ＊(º﹃º)用】</p>
+	<br>
+	<h3>【あるふぁ＊(º﹃º)用】</h3>
 	<textarea id="skillTable2" cols="40" rows="4"></textarea>
 
-	<h2>習得するスキル</h2>
+	<h2>④習得するスキル</h2>
+	<p>外すボタンでスキルを外していきながら、画面下部にある「合計」の数字を見てSCを調整してみてください。</p>
+	<p>外したスキルは③で再び選択可能です。</p>
+	<p>選択したスキルはコピー欄でコピー可能なので、メモ帳などに貼り付けてご活用ください。</p>
 	<table style="font-size: 10pt; font-weight: 500; border-collapse: collapse; width: 100%;" border="1">
 		<tbody>
 			<tr style="background-color: #e6e6e6;">
@@ -896,16 +906,13 @@
 		<tbody id="checkList2">
 		</tbody>
 	</table>
-
-	選択スキル(コピー用)<br>
+	<br>
+	<h3>選択スキル(コピー用)</h3>
 	<textarea id="copyList" rows="4" cols="40"></textarea>
-	<p>【あるふぁ＊(º﹃º)用】</p>
+	<h3>【あるふぁ＊(º﹃º)用】</h3>
 	<textarea id="copyListAlpha" rows="4" cols="40"></textarea>
 
 	<p><input type="button" value="全てのチェックを外す" onclick="allDisCheck();"></p>
-	<br>
-	<br>
-	<br>
 	<br>
 	<br>
 	<br>
